@@ -1,0 +1,11 @@
+.. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
+   :target: https://www.patreon.com/pyexcel
+
+.. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch={{branch}}
+   :target: http://travis-ci.org/{{organisation}}/{{name}}
+
+.. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
+   :target: https://codecov.io/github/{{organisation}}/{{name}}
+
+.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
+   :target: https://gitter.im/pyexcel/Lobby

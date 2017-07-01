@@ -1,0 +1,9 @@
+sudo: false
+language: python
+notifications:
+  email: false
+install:
+  - pip install -r test_requirements.txt
+script:
+  - find templates/ -type f -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
+  - moban -c config/data.yml -t test.file -td templates .
