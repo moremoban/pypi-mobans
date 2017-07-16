@@ -17,9 +17,6 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-{%if 'excel' in name and name != 'pyexcel'%}
-    'pyexcel': ('http://pyexcel.readthedocs.org/en/latest/', None),
-{%endif%}
 {%block additional_mapping%}
 {%endblock%}
 }
