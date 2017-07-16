@@ -17,7 +17,7 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-{%block additional_mapping%}
+{%block intersphinx_mapping%}
 {%endblock%}
 }
 spelling_word_list_filename = 'spelling_wordlist.txt'
