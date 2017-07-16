@@ -89,9 +89,12 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# emacs
 *~
-commons/
-commons
+
+# moban hashes
 .moban.hashes
+
 {%block extra%}
 {%endblock%}
