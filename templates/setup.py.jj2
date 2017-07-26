@@ -37,7 +37,7 @@ DESCRIPTION = (
 )
 URL = 'https://github.com/{{organisation}}/{{name}}'
 DOWNLOAD_URL = '%s/archive/{{release}}.tar.gz' % URL
-FILES = ['README.rst', {%block morefiles %}{%endblock%}, 'CHANGELOG.rst']
+FILES = ['README.rst', {%block morefiles %}{%endblock%}'CHANGELOG.rst']
 KEYWORDS = [
 {% for keyword in keywords %}
     '{{keyword}}',
