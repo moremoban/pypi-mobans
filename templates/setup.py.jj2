@@ -1,3 +1,5 @@
+{% block header %}
+{% endblock %}
 {% if external_module_library %}
 from distutils.core import setup, Extension
 {% else %}
@@ -22,6 +24,10 @@ AUTHOR = '{{author}}'
 VERSION = '{{current_version}}'
 EMAIL = '{{contact}}'
 LICENSE = '{{license}}'
+{% if MAINTAINER %}
+MAINTAINER = '{{maintainer}}'
+MAINTAINER_CONTACT = '{{maintainer_contact}}'
+{% endif %}
 {% if command_line_interface %}
 ENTRY_POINTS = {
     'console_scripts': [
@@ -37,7 +43,7 @@ DESCRIPTION = (
 )
 URL = 'https://github.com/{{organisation}}/{{name}}'
 DOWNLOAD_URL = '%s/archive/{{release}}.tar.gz' % URL
-FILES = ['README.rst', {%block morefiles %}{%endblock%}, 'CHANGELOG.rst']
+FILES = ['README.rst', {%block morefiles %}{%endblock%} 'CHANGELOG.rst']
 KEYWORDS = [
 {% for keyword in keywords %}
     '{{keyword}}',
@@ -52,7 +58,6 @@ CLASSIFIERS = [
     'Topic :: Utilities',
     'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
-    'License :: OSI Approved :: BSD License',
     'Intended Audience :: Developers',
     'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
@@ -167,6 +172,10 @@ if __name__ == '__main__':
         author=AUTHOR,
         version=VERSION,
         author_email=EMAIL,
+{% if MAINTAINER %}
+        maintainer=MAINTAINER_NAME,
+        maintainer_email=MAINTAINER_EMAIL,
+{% endif %}
         description=DESCRIPTION,
         url=URL,
         download_url=DOWNLOAD_URL,
