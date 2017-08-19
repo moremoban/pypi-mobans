@@ -95,6 +95,7 @@ ENV/
 
 # moban hashes
 .moban.hashes
+.DS_store
 
 {%block extra%}
 {%endblock%}
