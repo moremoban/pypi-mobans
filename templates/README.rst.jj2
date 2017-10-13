@@ -1,21 +1,26 @@
 ================================================================================
-{{name}}
+{{name}}{% if full_name %} - {{full_name}}
+{%endif%}
 ================================================================================
 
 .. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
    :target: http://travis-ci.org/{{organisation}}/{{name}}
 
-.. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
-    :target: https://codecov.io/github/{{organisation}}/{{name}}
+.. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/{{organisation}}/{{name}}
 
 {%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
    :target: http://{{name|lower}}.readthedocs.org/en/latest/
 {%endblock%}
 
+{% block features %}
+{% endblock %}
 
 Installation
 ================================================================================
+
+{% if release != '0.0.0' %}
 
 You can install it via pip:
 
@@ -25,9 +30,13 @@ You can install it via pip:
 
 
 or clone it and install it:
+{% endif %}
 
 .. code-block:: bash
 
     $ git clone http://github.com/{{organisation}}/{{name}}.git
     $ cd {{name}}
     $ python setup.py install
+
+{%block bottom_block%}
+{%endblock%}
