@@ -122,10 +122,10 @@ EXTRAS_REQUIRE = {
 EXTRAS_REQUIRE = {}
 {% endif %}
 {% endif %}
-__PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
+PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-__GS_COMMAND = ('gs {{name}} v{{release}} ' +
-                "Find {{release}} in changelog more details")
+GS_COMMAND = ('gs {{name}} v{{release}} ' +
+              "Find {{release}} in changelog more details")
 here = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -154,8 +154,8 @@ class PublishCommand(Command):
             pass
 
         self.status('Building Source and Wheel (universal) distribution…')
-        os.system(__GS_COMMAND)
-        os.system(__PUBLISH_COMMAND)
+        if os.system(GS_COMMAND) == 0:
+            os.system(PUBLISH_COMMAND)
 
         sys.exit()
 
@@ -231,7 +231,7 @@ if __name__ == '__main__':
 {% endif %}
 {% endif%}
         classifiers=CLASSIFIERS,
-		setup_requires=['gease'],
+        setup_requires=['gease'],
         cmdclass={
             'publish': PublishCommand,
         }
