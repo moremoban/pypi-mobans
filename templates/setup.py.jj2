@@ -125,7 +125,7 @@ EXTRAS_REQUIRE = {}
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
 GS_COMMAND = ('gs {{name}} v{{release}} ' +
-              "Find {{release}} in changelog more details")
+              "Find {{release}} in changelog for more details")
 here = os.path.abspath(os.path.dirname(__file__))
 
 
