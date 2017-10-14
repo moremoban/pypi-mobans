@@ -1,15 +1,13 @@
 {% block header %}
+# Template by setupmobans
 {% endblock %}
+import os
 import codecs
+from shutil import rmtree
 {% if external_module_library %}
 from distutils.core import setup, Extension
 {% else %}
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from ez_setup import use_setuptools
-    use_setuptools()
-    from setuptools import setup, find_packages
+from setuptools import setup, find_packages, Command
 {%endif%}
 {%block platform_block%}
 from platform import python_implementation
@@ -124,6 +122,42 @@ EXTRAS_REQUIRE = {
 EXTRAS_REQUIRE = {}
 {% endif %}
 {% endif %}
+__PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
+    sys.executable)
+__GS_COMMAND = ('gs {{name}} v{{release}} ' +
+                "Find {{release}} in changelog more details")
+here = os.path.abspath(os.path.dirname(__file__))
+
+
+class PublishCommand(Command):
+    """Support setup.py upload."""
+
+    description = 'Build and publish the package on github and pypi'
+    user_options = []
+
+    @staticmethod
+    def status(s):
+        """Prints things in bold."""
+        print('\033[1m{0}\033[0m'.format(s))
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        try:
+            self.status('Removing previous builds…')
+            rmtree(os.path.join(here, 'dist'))
+        except OSError:
+            pass
+
+        self.status('Building Source and Wheel (universal) distribution…')
+        os.system(__GS_COMMAND)
+        os.system(__PUBLISH_COMMAND)
+
+        sys.exit()
 
 
 def read_files(*files):
@@ -196,5 +230,9 @@ if __name__ == '__main__':
         entry_points=ENTRY_POINTS,
 {% endif %}
 {% endif%}
-        classifiers=CLASSIFIERS
+        classifiers=CLASSIFIERS,
+		setup_requires=['gease'],
+        cmdclass={
+            'publish': PublishCommand,
+        }
     )
