@@ -16,8 +16,8 @@ setup.py
 
 #. flake8 compliant setup.py
 #. feature parity with `kennethreitz/setup.py <https://github.com/kennethreitz/setup.py>`_
-   #. automatically upload to pypi without using twine
-   #. automatically do git release while uploading to pypi
+   - automatically upload to pypi without using twine
+   - automatically do git release while uploading to pypi
 #. configured to build universial wheels by default
 
 Installation
