@@ -5,6 +5,20 @@ setupmobans
 .. image:: https://api.travis-ci.org/moremoban/setupmobans.svg?branch=master
    :target: http://travis-ci.org/moremoban/setupmobans
 
+Scaffolding templates for your Python project. It is used with `yehua <https://github.com/chfw/yehua>`_
+and `pyexcel <https://github.com/pyexcel/pyexcel>`_.
+
+Features
+================================================================================
+
+setup.py
+----------
+
+#. flake8 compliant setup.py
+#. feature parity with `kennethreitz/setup.py <https://github.com/kennethreitz/setup.py>`_
+   #. automatically upload to pypi without using twine
+   #. automatically do git release while uploading to pypi
+#. configured to build universial wheels by default
 
 Installation
 ================================================================================
