@@ -50,4 +50,4 @@ your home folder as::
    password=your_password
 
 
-And you need `gease` installed too.
+And you need to configure `gease`. 
