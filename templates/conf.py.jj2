@@ -15,12 +15,12 @@ extensions = [
 {%block SPHINX_EXTENSIONS%}
 {%endblock%}
 ]
-
+{%block custom_varaibles%}
+{%endblock%}
 intersphinx_mapping = {
 {%block intersphinx_mapping%}
 {%endblock%}
 }
-spelling_word_list_filename = 'spelling_wordlist.txt'
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
