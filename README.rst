@@ -1,9 +1,9 @@
 ================================================================================
-setupmobans
+pypi-mobans
 ================================================================================
 
-.. image:: https://api.travis-ci.org/moremoban/setupmobans.svg?branch=master
-   :target: http://travis-ci.org/moremoban/setupmobans
+.. image:: https://api.travis-ci.org/moremoban/pypi-mobans.svg?branch=master
+   :target: http://travis-ci.org/moremoban/pypi-mobans
 
 Scaffolding templates for your Python project. It is used with `yehua <https://github.com/chfw/yehua>`_
 and `pyexcel <https://github.com/pyexcel/pyexcel>`_.
@@ -31,7 +31,7 @@ You can get it:
 
 .. code-block:: bash
 
-    $ git clone http://github.com/moremoban/setupmobans.git
+    $ git clone http://github.com/moremoban/pypi-mobans.git
 
 
 Notes
