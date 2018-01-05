@@ -35,10 +35,9 @@ ENTRY_POINTS = {
 }
 {% endif %}
 DESCRIPTION = (
-{% for i in range(0, description|length, 70) %}
-    '{{ description[i:(70+i)] }}' +
+{% for line in description | split_length(70) %}
+    '{{ line }}'{{ ' +' if not loop.last}}
 {% endfor %}
-    ''
 )
 URL = 'https://github.com/{{organisation}}/{{name}}'
 DOWNLOAD_URL = '%s/archive/{{release}}.tar.gz' % URL
