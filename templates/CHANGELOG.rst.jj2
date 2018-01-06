@@ -1,0 +1,30 @@
+Change log
+================================================================================
+
+{% for release in releases %}
+{{release.version}} - {{release.date}}
+--------------------------------------------------------------------------------
+
+{% for change in release.changes %}
+{{change.action}}
+********************************************************************************
+
+{% for item in change.details %}
+{% if item is mapping %}
+{% for key, value_list in item.items() %}
+{% for line in key | github_expand(name, organisation) | split_length(77) %}
+{{'#. ' if loop.first else '   '}}{{line}}
+{% endfor %}
+{% for list_item in value_list %}
+   * {{list_item}}
+{% endfor %}
+{% endfor %}
+{% else %}
+{% for line in item | github_expand(name, organisation) | split_length(77) %}
+{{'#. ' if loop.first else '   '}}{{line}}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{% endfor %}
+{% endfor %}
