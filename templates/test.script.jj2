@@ -15,7 +15,7 @@
         {% if name == nick_name %}
           {%set package=name%}
         {%else%}
-          {%set package='pyexcel_' + nick_name%}
+          {%set package=name%}
         {%endif%}
       {%endif%}
 	{%endif%}
