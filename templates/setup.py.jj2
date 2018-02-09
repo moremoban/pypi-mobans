@@ -90,6 +90,9 @@ INSTALL_REQUIRES = [
   {%   endif %}
 {% endfor %}
 ]
+{% block additional_setup_commands %}
+SETUP_COMMANDS = {}
+{% endblock %}
 
 {% for dependency in dependencies: %}
   {%  if ';' in dependency: %}
@@ -168,6 +171,11 @@ class PublishCommand(Command):
                 self.status(UPLOAD_FAILED_MSG % PUBLISH_COMMAND)
 
         sys.exit()
+
+
+SETUP_COMMANDS.update({
+    'publish': PublishCommand,
+})
 
 
 def has_gease():
@@ -254,7 +262,5 @@ if __name__ == '__main__':
 {% endif %}
 {% endif%}
         classifiers=CLASSIFIERS,
-        cmdclass={
-            'publish': PublishCommand,
-        }
+        cmdclass=SETUP_COMMANDS
     )
