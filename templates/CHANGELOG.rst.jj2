@@ -15,9 +15,11 @@ Change log
 {% for line in key | github_expand(name, organisation) | split_length(77) %}
 {{'#. ' if loop.first else '   '}}{{line}}
 {% endfor %}
+
 {% for list_item in value_list %}
    * {{list_item}}
 {% endfor %}
+
 {% endfor %}
 {% else %}
 {% for line in item | github_expand(name, organisation) | split_length(77) %}
