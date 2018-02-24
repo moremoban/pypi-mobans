@@ -163,6 +163,7 @@ class PublishCommand(Command):
             self.status('Removing previous builds...')
             rmtree(os.path.join(HERE, 'dist'))
             rmtree(os.path.join(HERE, 'build'))
+            rmtree(os.path.join(HERE, '{{name|replace('-', '_')}}.egg-info'))
         except OSError:
             pass
 
