@@ -1,3 +1,7 @@
+{% block shebang %}
+#!/usr/bin/env python3
+{% endblock %}
+
 {% block header %}
 # Template by setupmobans
 {% endblock %}
