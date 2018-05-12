@@ -43,7 +43,7 @@ DESCRIPTION = (
     '{{ line }}'{{ ' +' if not loop.last}}
 {% endfor %}
 )
-URL = 'https://github.com/{{organisation}}/{{name}}'
+URL = 'https://{{scm_host}}/{{organisation}}/{{name}}'
 DOWNLOAD_URL = '%s/archive/{{release}}.tar.gz' % URL
 FILES = ['README.rst',{%block morefiles %}{%endblock%} 'CHANGELOG.rst']
 KEYWORDS = [
