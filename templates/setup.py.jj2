@@ -1,5 +1,9 @@
+{% block shebang %}
+#!/usr/bin/env python3
+{% endblock %}
+
 {% block header %}
-# Template by setupmobans
+# Template by pypi-mobans
 {% endblock %}
 import os
 import sys

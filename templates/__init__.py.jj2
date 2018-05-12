@@ -1,3 +1,7 @@
-# flake8: noqa
 from {{name|replace('-', '_')}}._version import __version__
 from {{name|replace('-', '_')}}._version import __author__
+
+__all__ = (
+    '__author__',
+    '__version__',
+)
