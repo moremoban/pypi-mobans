@@ -31,11 +31,25 @@ LICENSE = '{{license}}'
 MAINTAINER = '{{maintainer}}'
 MAINTAINER_CONTACT = '{{maintainer_contact}}'
 {% endif %}
-{% if command_line_interface %}
+{% if command_line_interface or entry_points %}
 ENTRY_POINTS = {
+{% if not entry_points or 'console_scripts' not in entry_points %}
     'console_scripts': [
         '{{command_line_interface}} = {{ entry_point }}'
-    ]
+    ],
+{% endif %}
+{% if entry_points %}
+  {% for group_name, items in entry_points.items() %}
+    '{{group_name}}': [
+      {% if group_name == 'console_scripts' and command_line_interface %}
+        '{{command_line_interface}} = {{ entry_point }}',
+      {% endif %}
+      {% for item in items %}
+        '{{item}}',
+      {% endfor %}
+    ],
+  {% endfor %}
+{% endif %}
 }
 {% endif %}
 DESCRIPTION = (
@@ -267,7 +281,7 @@ if __name__ == '__main__':
         packages=PACKAGES,
         include_package_data=True,
         zip_safe=False,
-{% if command_line_interface %}
+{% if command_line_interface or entry_points %}
         entry_points=ENTRY_POINTS,
 {% endif %}
 {% endif%}
