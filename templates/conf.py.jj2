@@ -15,8 +15,6 @@ extensions = [
 {%block SPHINX_EXTENSIONS%}
 {%endblock%}
 ]
-{%block custom_varaibles%}
-{%endblock%}
 intersphinx_mapping = {
 {%block intersphinx_mapping%}
 {%endblock%}
