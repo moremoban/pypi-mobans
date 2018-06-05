@@ -1,9 +1,24 @@
 sudo: false
 language: python
+python:
+  - 2.7
+  - 3.6
 notifications:
   email: false
 install:
   - pip install -r test_requirements.txt
+stages:
+  - test
+  - moban
+
+jobs:
+  include:
+    - stage: moban
+      script:
+        - moban -m local.yml
+        - git diff --exit-code
+
+stage: test
 script:
-  - find templates/ -type f -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
+  - find templates/ -type f -name '*.jj2' -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
   - moban -c config/data.yml -t test.file -td templates .
