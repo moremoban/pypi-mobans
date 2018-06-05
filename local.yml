@@ -1,0 +1,6 @@
+configuration:
+  configuration: config/data.yml
+  template_dir:
+    - templates
+targets:
+  - .gitignore: gitignore.jj2
