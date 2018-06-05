@@ -1,3 +1,6 @@
+{% if not scm_host %}
+{% set scm_host = 'github.com' %}
+{% endif %}
 {% block shebang %}
 #!/usr/bin/env python3
 {% endblock %}
