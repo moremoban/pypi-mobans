@@ -19,9 +19,6 @@
 # moban hashes
 .moban.hashes
 
-{%block extra%}
-{%endblock%}
-
 # Extra rules from https://github.com/github/gitignore/
 {% if gitignore_language %}
 # {{ gitignore_language }} rules
@@ -40,3 +37,6 @@
 # {{ ruleset }} rules
 {% include 'gitignore/Global/' + ruleset + '.gitignore' %}
 {% endfor %}
+
+{%block extra%}
+{%endblock%}
