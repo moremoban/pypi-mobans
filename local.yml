@@ -4,3 +4,4 @@ configuration:
     - templates
 targets:
   - .gitignore: gitignore.jj2
+  - LICENSE: NEW_BSD_LICENSE.jj2
