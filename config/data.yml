@@ -8,4 +8,7 @@ contact: wangc_2011@hotmail.com
 license: NEW BSD
 company: Onni Software Ltd.
 branch: master
-description: this is a base for python project scaffolding
+description: Scaffolding templates for your Python project.
+release: 0.0.0
+gitter_room: chfw_moban/Lobby
+setup_py: false

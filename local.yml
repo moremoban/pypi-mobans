@@ -1,7 +1,9 @@
 configuration:
   configuration: config/data.yml
   template_dir:
+    - .moban.dt/
     - templates
 targets:
   - .gitignore: gitignore.jj2
   - LICENSE: NEW_BSD_LICENSE.jj2
+  - README.rst: local-README.rst.jj2
