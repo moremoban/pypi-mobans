@@ -1,18 +1,10 @@
-================================================================================
-pypi-mobans
-================================================================================
+{% extends 'README.rst.jj2' %}
 
-.. image:: https://api.travis-ci.org/moremoban/pypi-mobans.svg?branch=master
-   :target: http://travis-ci.org/moremoban/pypi-mobans
+{% block documentation_link %}
+{% endblock %}
 
-.. image:: https://codecov.io/github/moremoban/pypi-mobans/coverage.png
-   :target: https://codecov.io/github/moremoban/pypi-mobans
-
-.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
-   :target: https://gitter.im/chfw_moban/Lobby
-
-
-Scaffolding templates for your Python project.
+{% block features %}
+{{description}}
 It is used with `yehua <https://github.com/chfw/yehua>`_.
 Organisations using it:
 
@@ -34,17 +26,9 @@ setup.py
    - automatically do git release while uploading to pypi
 
 3. configured to build universial wheels by default
+{% endblock %}
 
-Installation
-================================================================================
-
-You can get it:
-
-.. code-block:: bash
-
-    $ git clone https://github.com/moremoban/pypi-mobans.git
-    $ cd pypi-mobans
-
+{% block bottom_block %}
 Notes
 ================================================================================
 
@@ -62,3 +46,4 @@ your home folder as::
 
 
 And you need to configure `gease`.
+{% endblock %}

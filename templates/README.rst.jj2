@@ -5,11 +5,7 @@
 {%endif%}
 ================================================================================
 
-.. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
-   :target: http://travis-ci.org/{{organisation}}/{{name}}
-
-.. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/{{organisation}}/{{name}}
+{% include 'badges.rst.jj2' %}
 
 {%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
