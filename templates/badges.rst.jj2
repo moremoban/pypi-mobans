@@ -1,8 +1,18 @@
+{% if not scm_host %}
+{% set scm_host = 'github.com' %}
+{% endif %}
+{% if scm_host == 'github.com' %}
 .. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch={{branch}}
    :target: http://travis-ci.org/{{organisation}}/{{name}}
+{% endif %}
 
+{% if scm_host == 'github.com' %}
 .. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
    :target: https://codecov.io/github/{{organisation}}/{{name}}
+{% elif scm_host == 'gitlab.com' %}
+.. image:: https://codecov.io/gitlab/{{organisation}}/{{name}}/coverage.png
+   :target: https://codecov.io/gitlab/{{organisation}}/{{name}}
+{% endif %}
 
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
    :target: https://gitter.im/pyexcel/Lobby
