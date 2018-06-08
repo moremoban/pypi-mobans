@@ -1,18 +1,27 @@
 {% if not scm_host %}
 {% set scm_host = 'github.com' %}
 {% endif %}
+{% if branch and branch == 'master' %}
+{% set branch = False %}
+{% endif %}
+{% set slug = organisation + '/' + name %}
 {% if scm_host == 'github.com' %}
-.. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch={{branch}}
-   :target: http://travis-ci.org/{{organisation}}/{{name}}
+{% if branch %}
+.. image:: https://api.travis-ci.org/{{slug}}.svg?branch={{branch}}
+{% else %}
+.. image:: https://api.travis-ci.org/{{slug}}.svg
+{% endif %}
+   :target: http://travis-ci.org/{{slug}}
 {% endif %}
 
-{% if scm_host == 'github.com' %}
-.. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
-   :target: https://codecov.io/github/{{organisation}}/{{name}}
-{% elif scm_host == 'gitlab.com' %}
-.. image:: https://codecov.io/gitlab/{{organisation}}/{{name}}/coverage.png
-   :target: https://codecov.io/gitlab/{{organisation}}/{{name}}
+{% set base_path = scm_host.split('.')[0] + '/' + slug %}
+{% if branch %}
+{% set suffix = '/branch/' + branch + '/graph/badge.svg' %}
+{% else %}
+{% set suffix = '/coverage.png' %}
 {% endif %}
+.. image:: https://codecov.io/{{base_path}}{{suffix}}
+   :target: https://codecov.io/{{base_path}}
 
 {% if gitter_room %}
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg

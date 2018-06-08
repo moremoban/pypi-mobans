@@ -2,7 +2,7 @@
 pypi-mobans
 ================================================================================
 
-.. image:: https://api.travis-ci.org/moremoban/pypi-mobans.svg?branch=master
+.. image:: https://api.travis-ci.org/moremoban/pypi-mobans.svg
    :target: http://travis-ci.org/moremoban/pypi-mobans
 
 .. image:: https://codecov.io/github/moremoban/pypi-mobans/coverage.png
