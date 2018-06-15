@@ -1,0 +1,13 @@
+{% macro underlines(name) %}
+{%- for i in range(name|length) -%}={%- endfor -%}
+{% endmacro %} 
+{% set project = name %}
+{% set project_underline = underlines(name) %}
+{% set mastertoctree = '
+  .. toctree::
+     :caption: API Documentation
+     :hidden:
+
+     List of Modules<modules>
+' %}
+{% include "docs/master_doc.rst_t" %}
