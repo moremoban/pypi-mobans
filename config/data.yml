@@ -12,3 +12,7 @@ description: Scaffolding templates for your Python project.
 release: 0.0.0
 gitter_room: chfw_moban/Lobby
 setup_py: false
+rsrcdir: docs/source
+rbuilddir: docs/_build
+version: 0.1.1rc3
+mastertocmaxdepth: 3
