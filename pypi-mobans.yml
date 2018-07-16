@@ -8,5 +8,6 @@ current_version: "0.0.1"
 release: "0.0.0"
 copyright_year: 2018
 license: public license
-dependencies: []
+dependencies:
+  - lml
 description: "Scaffolding mobans for your Python project."
