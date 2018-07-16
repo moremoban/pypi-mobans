@@ -16,7 +16,7 @@ VERSION = '0.0.1'
 EMAIL = 'wangc_2011@hotmail.com'
 LICENSE = 'public license'
 DESCRIPTION = (
-    'general python package templates using moban'
+    'Scaffolding mobans for your Python project.'
 )
 URL = 'https://github.com/moremoban/pypi-mobans'
 DOWNLOAD_URL = '%s/archive/0.0.0.tar.gz' % URL

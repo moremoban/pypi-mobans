@@ -8,11 +8,9 @@ pypi-mobans
 .. image:: https://codecov.io/github/moremoban/pypi-mobans/coverage.png
    :target: https://codecov.io/github/moremoban/pypi-mobans
 
-.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
-   :target: https://gitter.im/chfw_moban/Lobby
 
 
-Scaffolding templates for your Python project.
+Scaffolding mobans for your Python project.
 It is used with `yehua <https://github.com/chfw/yehua>`_.
 Organisations using it:
 
@@ -44,6 +42,7 @@ You can get it:
 
     $ git clone https://github.com/moremoban/pypi-mobans.git
     $ cd pypi-mobans
+    $ python setup.py install
 
 Notes
 ================================================================================

@@ -9,4 +9,4 @@ release: "0.0.0"
 copyright_year: 2018
 license: public license
 dependencies: []
-description: "general python package templates using moban"
+description: "Scaffolding mobans for your Python project."

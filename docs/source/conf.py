@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 DESCRIPTION = (
-    'general python package templates using moban' +
+    'Scaffolding mobans for your Python project.' +
     ''
 )
 # -*- coding: utf-8 -*-
