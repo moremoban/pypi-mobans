@@ -1,2 +1,5 @@
 include README.rst
 include CHANGELOG.rst
+include pypi_mobans/resources/templates/*
+include pypi_mobans/resources/templates/gitignore/*
+include pypi_mobans/resources/config/*
