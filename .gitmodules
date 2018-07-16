@@ -1,3 +1,3 @@
 [submodule "gitignore"]
-	path = templates/gitignore
+	path = pypi_mobans/resources/templates/gitignore
 	url = https://github.com/github/gitignore
