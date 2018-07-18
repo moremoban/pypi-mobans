@@ -4,7 +4,7 @@ from pypi_mobans._version import __author__
 from lml.plugin import PluginInfo
 
 
-@PluginInfo('pypi', tags=['setupmobans', 'pypi', 'pypimobans'])
+@PluginInfo('library', tags=['setupmobans', 'pypi', 'pypimobans'])
 class Pypkg():
     def __init__(self):
         __package_path__ = os.path.dirname(__file__)
