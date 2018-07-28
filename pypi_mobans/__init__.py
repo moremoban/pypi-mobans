@@ -1,4 +1,5 @@
 # flake8: noqa
+import os
 from pypi_mobans._version import __version__
 from pypi_mobans._version import __author__
 from lml.plugin import PluginInfo
