@@ -11,7 +11,5 @@ targets:
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - test.sh: test.script.jj2
   - "pypi_mobans/_version.py": "_version.py.jj2"
-  - .gitignore: gitignore.jj2
-  - .travis.yml: travis.yml.jj2
 copy:
   - "pypi_mobans/resources/templates": ../templates/**
