@@ -7,7 +7,7 @@ configuration:
 targets:
   - .gitignore: gitignore.jj2
   - LICENSE: NEW_BSD_LICENSE.jj2
-  - README.rst: local-README.rst.jj2
+  - README.rst: CUSTOM_README.rst.jj2
 copy:
   - templates/docs/Makefile.jj2: Makefile.new_t
   - templates/docs/make.bat.jj2: make.bat.new_t
