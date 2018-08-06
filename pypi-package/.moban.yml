@@ -1,8 +1,8 @@
 configuration:
   template_dir:
-  - "mobans/templates"
-  - ".moban.d"
-  configuration: pypi-mobans.yml
+  - "../.moban.d"
+  - "../mobans/templates"
+  configuration: "../pypi-mobans.yml"
 targets:
   - README.rst: CUSTOM_README.rst.jj2
   - setup.py: custom_setup.py.jj2
@@ -12,3 +12,6 @@ targets:
   - test.sh: test.script.jj2
   - "pypi_mobans/_version.py": "_version.py.jj2"
   - .gitignore: gitignore.jj2
+  - .travis.yml: travis.yml.jj2
+copy:
+  - "pypi_mobans/resources/templates": ../templates/**

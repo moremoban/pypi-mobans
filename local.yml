@@ -1,7 +1,7 @@
 configuration:
   configuration: config/data.yml
   template_dir:
-    - .moban.dt/
+    - .moban.d/
     - templates
     - ../sphinx-quickstart-templates
 targets:
