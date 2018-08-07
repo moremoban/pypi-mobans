@@ -47,16 +47,6 @@ You can get it:
     $ git clone https://github.com/moremoban/pypi-mobans.git
     $ cd pypi-mobans
 
-Maintenance
-================================================================================
-
-`mobans` lives in `templates` folder. python package lives in `pypi-package`
-folder. `upstreaming.yml` is used to upstream sphinx templates into pypi-mobans.
-Everything else are meta data.
-
-`moban -m mobanfile` will update all meta files including the files in
-`pypi-package`
-
 Notes
 ================================================================================
 
