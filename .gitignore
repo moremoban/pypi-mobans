@@ -475,3 +475,4 @@ mobans/
 pypi-package/README.rst
 pypi-package/pypi_mobans/resources/
 pypi-package/test.sh
+pypi-package/CHANGELOG.rst

@@ -1,0 +1,11 @@
+name: "pypi-mobans"
+organisation: moremoban
+releases:
+- changes:
+  - action: First release
+    details:
+    - use pypi as pacakge distribution source
+    - versioning is applied
+  date: unreleased
+  version: 0.0.1
+

@@ -1,7 +1,7 @@
 configuration:
   configuration: pypi-mobans.yml
   template_dir:
-    - .moban.d/
+    - .moban.dt/
     - templates
     - ../sphinx-quickstart-templates
 copy:
