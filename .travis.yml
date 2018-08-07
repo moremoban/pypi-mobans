@@ -15,7 +15,7 @@ jobs:
   include:
     - stage: moban
       script:
-        - moban -m local.yml
+        - moban -m upstreaming.yml
         - git diff --exit-code
 
 stage: test
