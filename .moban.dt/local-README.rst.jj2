@@ -31,8 +31,6 @@ setup.py
 {% endblock %}
 
 {% block bottom_block %}
-{% block github_note %}
-{% endblock %}
 Notes
 ================================================================================
 
