@@ -468,11 +468,3 @@ cscope.files
 cscope.out
 cscope.in.out
 cscope.po.out
-
-
-# pypi-mobans
-mobans/
-pypi-package/README.rst
-pypi-package/pypi_mobans/resources/
-pypi-package/test.sh
-pypi-package/CHANGELOG.rst

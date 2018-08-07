@@ -4,7 +4,7 @@ configuration:
   - "mobans/templates"
   configuration: config/data.yml
 targets:
-  - .gitignore: pypi_gitignore.jj2
+  - .gitignore: gitignore.jj2
   - LICENSE: NEW_BSD_LICENSE.jj2
   - README.rst: local-README.rst.jj2
   - output: CHANGELOG.rst
