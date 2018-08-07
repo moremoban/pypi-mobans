@@ -1,0 +1,19 @@
+configuration:
+  template_dir:
+  - ".moban.dt"
+  - "mobans/templates"
+  configuration: "pypi-mobans.yml"
+targets:
+  - .gitignore: pypi_gitignore.jj2
+  - LICENSE: NEW_BSD_LICENSE.jj2
+  - README.rst: INDEX_README.rst.jj2
+  - "pypi-package/README.rst": CUSTOM_README.rst.jj2
+  - "pypi-package/LICENSE": NEW_BSD_LICENSE.jj2
+  - "pypi-package/setup.py": custom_setup.py.jj2
+  - "pypi-package/requirements.txt": requirements.txt.jj2
+  - "pypi-package/tests/requirements.txt": "tests/custom_requirements.txt.jj2"
+  - "pypi-package/docs/source/conf.py": "docs/source/conf.py.jj2"
+  - "pypi-package/test.sh": test.script.jj2
+  - "pypi-package/pypi_mobans/_version.py": "_version.py.jj2"
+copy:
+  - "pypi-package/pypi_mobans/resources/templates": ../templates/**

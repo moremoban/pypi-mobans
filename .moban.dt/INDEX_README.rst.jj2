@@ -1,0 +1,13 @@
+{% extends "CUSTOM_README.rst.jj2" %}
+
+{% block github_note %}
+File organisation
+================================================================================
+
+`mobans` lives in `templates` folder. python package lives in `pypi-package`
+folder. `upstreaming.yml` is used to upstream sphinx templates into pypi-mobans.
+
+
+Everything else are meta data. 
+
+{% endblock %}

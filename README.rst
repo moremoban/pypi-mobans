@@ -18,6 +18,8 @@ Organisations using it:
 
 - `pyexcel <https://github.com/pyexcel/pyexcel>`_.
 - `coala <https://github.com/coala/coala>`_.
+- `pyecharts <https://github.com/pyecharts/pyecharts>`_.
+- `echarts-maps <https://github.com/echarts-maps>`_.
 
 Features
 ================================================================================
@@ -44,6 +46,15 @@ You can get it:
 
     $ git clone https://github.com/moremoban/pypi-mobans.git
     $ cd pypi-mobans
+
+File organisation
+================================================================================
+
+`mobans` lives in `templates` folder. python package lives in `pypi-package`
+folder. `upstreaming.yml` is used to upstream sphinx templates into pypi-mobans.
+
+
+Everything else are meta data. 
 
 Notes
 ================================================================================

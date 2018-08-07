@@ -10,6 +10,8 @@ Organisations using it:
 
 - `pyexcel <https://github.com/pyexcel/pyexcel>`_.
 - `coala <https://github.com/coala/coala>`_.
+- `pyecharts <https://github.com/pyecharts/pyecharts>`_.
+- `echarts-maps <https://github.com/echarts-maps>`_.
 
 Features
 ================================================================================
@@ -29,6 +31,8 @@ setup.py
 {% endblock %}
 
 {% block bottom_block %}
+{% block github_note %}
+{% endblock %}
 Notes
 ================================================================================
 
