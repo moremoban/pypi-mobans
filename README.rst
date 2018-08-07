@@ -8,6 +8,8 @@ pypi-mobans
 .. image:: https://codecov.io/github/moremoban/pypi-mobans/coverage.png
    :target: https://codecov.io/github/moremoban/pypi-mobans
 
+.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
+   :target: https://gitter.im/chfw_moban/Lobby
 
 
 Scaffolding mobans for your Python project.
@@ -42,7 +44,6 @@ You can get it:
 
     $ git clone https://github.com/moremoban/pypi-mobans.git
     $ cd pypi-mobans
-    $ python setup.py install
 
 Notes
 ================================================================================

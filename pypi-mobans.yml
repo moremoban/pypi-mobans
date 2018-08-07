@@ -11,3 +11,8 @@ license: public license
 dependencies:
   - lml
 description: "Scaffolding mobans for your Python project."
+gitter_room: chfw_moban/Lobby
+setup_py: false
+rsrcdir: docs/source
+rbuilddir: docs/_build
+mastertocmaxdepth: 3

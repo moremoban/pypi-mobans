@@ -1,5 +1,5 @@
 configuration:
-  configuration: config/data.yml
+  configuration: pypi-mobans.yml
   template_dir:
     - .moban.d/
     - templates
