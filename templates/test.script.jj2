@@ -22,7 +22,7 @@
   {%endif%}
 {%endif%}
 pip freeze
-nosetests --with-coverage --cover-package {{package|lower|replace('-', '_')}} --cover-package tests {%if include_doctest%}--with-doctest --doctest-extension=.rst README.rst{%endif%} tests {%if not nodocs%}docs/source{%endif%} {%if not external_module_library%}{{package|lower|replace('-', '_')}}{%endif%} && flake8 . --exclude=.moban.d {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%}
+nosetests --with-coverage --cover-package {{package|lower|replace('-', '_')}} --cover-package tests {%if include_doctest%}--with-doctest --doctest-extension=.rst README.rst{%endif%} {%if not nodocs%}docs/source{%endif%} {%if not external_module_library%}{{package|lower|replace('-', '_')}}{%endif%} && flake8 . --exclude=.moban.d {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%}
 
 {%block posttest%}
 {%endblock%}
