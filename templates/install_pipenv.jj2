@@ -1,0 +1,6 @@
+pip install --user pipenv
+pip install --user --upgrade pipenv
+
+{% for dependency in dependencies: %}
+pipenv install {{dependency}}
+{% endfor %}
