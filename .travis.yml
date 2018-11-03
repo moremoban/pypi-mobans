@@ -15,14 +15,13 @@ jobs:
   include:
     - stage: moban
       script:
+        - sed -i "s/{{ \(\w*\) | repr }}/'{{ \1 }}'/;s/{%- \(for\|endfor\)/{% \1/" ~/.moban/sphinx/sphinx/templates/quickstart/conf.py_t
         - moban -m local.yml
         - git diff --exit-code
 
 stage: test
 
 before_script:
-  - sed -i "s/{{ \(\w*\) | repr }}/'{{ \1 }}'/;s/{%- \(for\|endfor\)/{% \1/"
-        ~/.moban/sphinx/sphinx/templates/quickstart/conf.py_t
 
 script:
   - find templates/ -type f -name '*.jj2' -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
