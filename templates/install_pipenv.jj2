@@ -8,10 +8,9 @@ python_version= '3.6'
 
 [packages]
 {% for dependency in dependencies: %}
-    {% if '=' in dependency %}
-        {{dependency}}
-    {% else %}
-        {{dependency}} = "*"
-    {% endif %}
+  {% if '=' in dependency %}
+    {{dependency}}
+  {% else %}
+    {{dependency}} = "*"
+  {% endif %}
 {% endfor %}
-
