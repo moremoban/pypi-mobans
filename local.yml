@@ -1,9 +1,11 @@
+requires:
+  - https://github.com/sphinx-doc/sphinx
 configuration:
   configuration: config/data.yml
   template_dir:
     - .moban.dt/
     - templates
-    - ../sphinx-quickstart-templates
+    - sphinx:sphinx/templates/quickstart
 targets:
   - .gitignore: gitignore.jj2
   - LICENSE: NEW_BSD_LICENSE.jj2

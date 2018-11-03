@@ -21,11 +21,8 @@ jobs:
 stage: test
 
 before_script:
-  - git clone https://github.com/sphinx-doc/sphinx ../sphinx
-  - (cd .. && ln -s sphinx/sphinx/templates/quickstart/
-                    sphinx-quickstart-templates)
   - sed -i "s/{{ \(\w*\) | repr }}/'{{ \1 }}'/;s/{%- \(for\|endfor\)/{% \1/"
-        ../sphinx-quickstart-templates/conf.py_t
+        ~/.moban/sphinx/sphinx/templates/quickstart/conf.py_t
 
 script:
   - find templates/ -type f -name '*.jj2' -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
