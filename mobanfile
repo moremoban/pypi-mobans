@@ -3,8 +3,7 @@ requires:
 configuration:
   configuration: config/data.yml
   template_dir:
-    - ".moban.dt"
-    - "mobans/templates"
+    - .moban.dt
     - templates
     - sphinx:sphinx/templates/quickstart
 targets:
