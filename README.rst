@@ -16,10 +16,10 @@ Scaffolding templates for your Python project.
 It is used with `yehua <https://github.com/chfw/yehua>`_.
 Organisations using it:
 
-- `pyexcel <https://github.com/pyexcel/pyexcel>`_.
-- `coala <https://github.com/coala/coala>`_.
-- `pyecharts <https://github.com/pyecharts/pyecharts>`_.
-- `echarts-maps <https://github.com/echarts-maps>`_.
+- `pyexcel mobans <https://github.com/pyexcel/pyexcel-mobans>`_.
+- `coala mobans<https://gitlab.com/coala/mobans>`_.
+- `pyecharts pypkg mobans <https://github.com/pyecharts/pypkg-mobans>`.
+- `echarts maps mobans <https://github.com/echarts-maps/echarts-js-mobans>`.
 
 Features
 ================================================================================
@@ -46,6 +46,14 @@ You can get it:
 
     $ git clone https://github.com/moremoban/pypi-mobans.git
     $ cd pypi-mobans
+
+Development process
+================================================================================
+
+Please fork and make pull request to **dev** branch. Per each release, dev branch
+will be merge into master branch.
+
+In order to make moban updates: please call `make`.
 
 Notes
 ================================================================================
