@@ -63,12 +63,18 @@ DESCRIPTION = (
 URL = 'https://{{scm_host}}/{{organisation}}/{{name}}'
 DOWNLOAD_URL = '%s/archive/{{release}}.tar.gz' % URL
 FILES = ['README.rst',{%block morefiles %}{%endblock%} 'CHANGELOG.rst']
+{% if self.additional_keywords %}
+{% set additional_keywords = self.additional_keywords() %}
+{% if additional_keywords and not additional_keywords.rstrip().endswith(',') %}
+{% set additional_keywords = additional_keywords.rstrip() + ',\n' %}
+{% endif %}
+{% endif %}
 KEYWORDS = [
     'python',
 {% for keyword in keywords %}
     '{{keyword}}',
 {% endfor %}
-    {%block additional_keywords%}
+    {%block additional_keywords -%}
     {%endblock%}
 ]
 
