@@ -6,6 +6,6 @@ releases:
     details:
     - use pypi as pacakge distribution source
     - versioning is applied
-  date: unreleased
+  date: 04.11.2018
   version: 0.0.1
 
