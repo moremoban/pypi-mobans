@@ -4,8 +4,8 @@ releases:
 - changes:
   - action: First release
     details:
-    - use pypi as pacakge distribution source
     - versioning is applied
-  date: 04.11.2018
+    - Pipfile included
+  date: 05.11.2018
   version: 0.0.1
 
