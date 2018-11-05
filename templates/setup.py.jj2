@@ -111,7 +111,7 @@ if python_implementation == "PyPy":
 {%- endmacro %}
 INSTALL_REQUIRES = [
 {% for dependency in dependencies: %}
-  {% if ';' not in dependency: %}
+  {% if ';' not in dependency and not dependency.startswith('#'): %}
     '{{dependency}}',
   {%   endif %}
 {% endfor %}
