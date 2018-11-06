@@ -17,9 +17,9 @@ It is used with `yehua <https://github.com/chfw/yehua>`_.
 Organisations using it:
 
 - `pyexcel mobans <https://github.com/pyexcel/pyexcel-mobans>`_.
-- `coala mobans<https://gitlab.com/coala/mobans>`_.
-- `pyecharts pypkg mobans <https://github.com/pyecharts/pypkg-mobans>`.
-- `echarts maps mobans <https://github.com/echarts-maps/echarts-js-mobans>`.
+- `coala mobans <https://gitlab.com/coala/mobans>`_.
+- `pyecharts pypkg mobans <https://github.com/pyecharts/pypkg-mobans>`_.
+- `echarts maps mobans <https://github.com/echarts-maps/echarts-js-mobans>`_.
 
 Features
 ================================================================================
@@ -51,7 +51,7 @@ Development process
 ================================================================================
 
 Please fork and make pull request to **dev** branch. Per each release, dev branch
-will be merge into master branch.
+will be merged into master branch.
 
 In order to make moban updates: please call `make`.
 
