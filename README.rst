@@ -37,6 +37,10 @@ setup.py
 
 3. configured to build universial wheels by default
 
+4. comes with a feature of removing comments from requirements.txt while loading
+into setup.py
+
+
 Installation
 ================================================================================
 
