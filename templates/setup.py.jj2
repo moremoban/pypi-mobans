@@ -15,7 +15,9 @@ from shutil import rmtree
 {% if external_module_library %}
 from distutils.core import setup, Extension
 {% else %}
-from setuptools import setup, find_packages, Command
+
+from setuptools import Command, setup, find_packages
+
 {%endif%}
 {%block platform_block%}
 from platform import python_implementation
@@ -70,13 +72,12 @@ FILES = ['README.rst',{%block morefiles %}{%endblock%} 'CHANGELOG.rst']
 {% endif %}
 {% endif %}
 KEYWORDS = [
+    'python',
 {% for keyword in keywords %}
     '{{keyword}}',
 {% endfor %}
-{% if additional_keywords %}
-{{ additional_keywords -}}
-{% endif %}
-    'python',
+    {%block additional_keywords -%}
+    {%endblock%}
 ]
 
 CLASSIFIERS = [
@@ -111,8 +112,21 @@ if python_implementation == "PyPy":
 {%- endmacro %}
 INSTALL_REQUIRES = [
 {% for dependency in dependencies: %}
-  {% if ';' not in dependency: %}
+  {% if ';' not in dependency and not dependency.startswith('#'): %}
+    {% if '#egg=' in dependency: %}
+      {% set dependency = dependency.split('#egg=') %}
+      {% set repo_link, egg_name = dependency[0], dependency[1] %}
+      {% set repo_link = repo_link.strip() %}
+      {% if '#' in egg_name: %}
+        {% set egg_name = egg_name.split('#')[0].strip() %}
+      {% endif %}
+    '{{[repo_link, egg_name] | join('#egg=')}}',
+    {% elif '#' in dependency: %}
+      {% set dependency = dependency.split('#')[0].strip() %}
     '{{dependency}}',
+    {% else %}
+    '{{dependency}}',
+    {% endif %}
   {%   endif %}
 {% endfor %}
 ]

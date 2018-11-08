@@ -16,8 +16,10 @@ Scaffolding templates for your Python project.
 It is used with `yehua <https://github.com/chfw/yehua>`_.
 Organisations using it:
 
-- `pyexcel <https://github.com/pyexcel/pyexcel>`_.
-- `coala <https://github.com/coala/coala>`_.
+- `pyexcel mobans <https://github.com/pyexcel/pyexcel-mobans>`_.
+- `coala mobans <https://gitlab.com/coala/mobans>`_.
+- `pyecharts pypkg mobans <https://github.com/pyecharts/pypkg-mobans>`_.
+- `echarts maps mobans <https://github.com/echarts-maps/echarts-js-mobans>`_.
 
 Features
 ================================================================================
@@ -35,6 +37,10 @@ setup.py
 
 3. configured to build universial wheels by default
 
+4. comes with a feature of removing comments from requirements.txt while loading
+into setup.py
+
+
 Installation
 ================================================================================
 
@@ -44,6 +50,14 @@ You can get it:
 
     $ git clone https://github.com/moremoban/pypi-mobans.git
     $ cd pypi-mobans
+
+Development process
+================================================================================
+
+Please fork and make pull request to **dev** branch. Per each release, dev branch
+will be merged into master branch.
+
+In order to make moban updates: please call `make`.
 
 Notes
 ================================================================================

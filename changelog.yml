@@ -1,0 +1,11 @@
+name: "pypi-mobans"
+organisation: moremoban
+releases:
+- changes:
+  - action: First release
+    details:
+    - versioning is applied
+    - Pipfile included
+  date: 05.11.2018
+  version: 0.0.1
+
