@@ -113,7 +113,20 @@ if python_implementation == "PyPy":
 INSTALL_REQUIRES = [
 {% for dependency in dependencies: %}
   {% if ';' not in dependency and not dependency.startswith('#'): %}
+    {% if '#egg=' in dependency: %}
+      {% set dependency = dependency.split('#egg=') %}
+      {% set repo_link, egg_name = dependency[0], dependency[1] %}
+      {% set repo_link = repo_link.strip() %}
+      {% if '#' in egg_name: %}
+        {% set egg_name = egg_name.split('#')[0].strip() %}
+      {% endif %}
+    '{{[repo_link, egg_name] | join('#egg=')}}',
+    {% elif '#' in dependency: %}
+      {% set dependency = dependency.split('#')[0].strip() %}
     '{{dependency}}',
+    {% else %}
+    '{{dependency}}',
+    {% endif %}
   {%   endif %}
 {% endfor %}
 ]
