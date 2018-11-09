@@ -1,0 +1,10 @@
+[all]
+files = **.jj2
+max_line_length = 80
+use_spaces = True
+defaultactions = ShowPatchAction
+
+[all.jinja]
+language = jinja2
+bears = Jinja2Bear
+check_end_label = False
