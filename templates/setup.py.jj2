@@ -4,6 +4,8 @@
 {% block shebang %}
 #!/usr/bin/env python3
 {% endblock %}
+{% set min_python_version = min_python_version|default('2.6') %}
+{% set min_python_version = min_python_version.split('.', 2) %}
 
 {% block header %}
 # Template by pypi-mobans
@@ -84,12 +86,33 @@ CLASSIFIERS = [
     'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
     'Intended Audience :: Developers',
+    {% if min_python_version <= ['2', '6'] %}
     'Programming Language :: Python :: 2.6',
+    {%- endif %}
+
+    {% if min_python_version <= ['2', '7'] %}
     'Programming Language :: Python :: 2.7',
+    {%- endif %}
+
+    {%- if min_python_version[0] == '3' %}
+    'Programming Language :: Python :: 3 :: Only',
+    {%- endif %}
+
+    {% if min_python_version <= ['3','3'] %}
     'Programming Language :: Python :: 3.3',
+    {%- endif %}
+
+    {% if min_python_version <= ['3','4'] %}
     'Programming Language :: Python :: 3.4',
+    {%- endif %}
+
+    {% if min_python_version <= ['3','5'] %}
     'Programming Language :: Python :: 3.5',
+    {%- endif %}
+
+    {% if min_python_version <= ['3','6'] %}
     'Programming Language :: Python :: 3.6',
+    {% endif %}
     {%block additional_classifiers%}
     {%endblock %}
 ]
