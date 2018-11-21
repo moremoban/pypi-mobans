@@ -9,3 +9,4 @@ First release
 
 #. versioning is applied
 #. Pipfile included
+#. codec and locale hacks added
