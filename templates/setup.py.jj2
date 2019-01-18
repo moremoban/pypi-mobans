@@ -13,6 +13,7 @@
 import os
 import sys
 import codecs
+import locale
 from shutil import rmtree
 {% if external_module_library %}
 from distutils.core import setup, Extension
