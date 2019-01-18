@@ -2,6 +2,12 @@ name: "pypi-mobans"
 organisation: moremoban
 releases:
 - changes:
+  - action: First release
+    details:
+    - "bug fix on `PR#60z`"
+  date: 18-01-2018
+  version: 0.0.3
+- changes:
   - action: Added
     details:
     - "`PR#60`: codec and locale hacks added"
