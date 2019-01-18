@@ -8,9 +8,25 @@ python_version= '3.6'
 
 [packages]
 {% for dependency in dependencies: %}
-  {% if '=' in dependency %}
+  {% if ('=' in dependency) or ('>' in dependency) or ('<' in dependency) %}
     {{dependency}}
   {% else %}
     {{dependency}} = "*"
   {% endif %}
 {% endfor %}
+
+[dev-packages]
+nose = "*"
+mock = "*"
+codecov = "*"
+coverage = "*"
+flake8 = "*"
+{% if dev_dependencies is defined %}
+  {% for dependency in dev_dependencies: %}
+    {% if ('=' in dependency) or ('>' in dependency) or ('<' in dependency) %}
+      {{dependency}}
+    {% else %}
+      {{dependency}} = "*"
+    {% endif %}
+  {% endfor %}
+{% endif %}

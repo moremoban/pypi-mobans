@@ -1,7 +1,25 @@
 Change log
 ================================================================================
 
-0.0.1 - 05.11.2018
+0.0.2 - 18-01-2019
+--------------------------------------------------------------------------------
+
+Added
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. `#60 <https://github.com/moremoban/pypi-mobans/pull/60>`_: codec and locale
+   hacks added
+#. `#61 <https://github.com/moremoban/pypi-mobans/pull/61>`_: add python
+   classifiers
+
+Updated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. `#63 <https://github.com/moremoban/pypi-mobans/pull/63>`_: updated Pipfile
+   implementation
+#. Synchronize with sphinx doc file at release date
+
+0.0.1 - 05-11-2018
 --------------------------------------------------------------------------------
 
 First release
