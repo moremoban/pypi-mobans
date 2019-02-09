@@ -326,6 +326,9 @@ def filter_out_test_code(file_handle):
 
 if __name__ == '__main__':
     setup(
+{% if 'tests' is exists %}
+        test_suite="tests",
+{% endif %}
         name=NAME,
         author=AUTHOR,
         version=VERSION,
