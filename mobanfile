@@ -1,5 +1,5 @@
 requires:
-  - https://github.com/sphinx-doc/sphinx
+  - https://github.com/sphinx-doc/sphinx.git
 configuration:
   configuration: config/data.yml
   template_dir:
