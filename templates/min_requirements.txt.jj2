@@ -1,0 +1,7 @@
+{% for dependency in dependencies: %}
+{%     if ';' in dependency: %}
+{{dependency.split(';')[0].replace('>=', '==').replace('>', '==') + ';' + dependency.split(';')[1]}}
+{%     else: %}
+{{dependency.replace('>=', '==').replace('>', '==')}}
+{%     endif %}
+{% endfor %}
