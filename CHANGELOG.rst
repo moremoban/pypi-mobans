@@ -1,13 +1,26 @@
 Change log
 ================================================================================
 
-0.0.3 - 18-01-2018
+0.0.4 - unreleased
+--------------------------------------------------------------------------------
+
+Updated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. travis-ci: uses xenial dist. dropped python 3.4, 3.7-dev and added 3.7, pypy2
+   and pypy3
+#. added min_requirements.txt where minimum requirements are computed
+#. #71: include tests folder as test_suite if 'tests' folder exists
+#. #16: package data / MANIFEST.in.jj2 is not easy to customise
+#. #14: Mandatory CHANGELOG.rst become optional
+
+0.0.3 - 18-01-2019
 --------------------------------------------------------------------------------
 
 First release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. bug fix on `PR#60z`
+#. bug fix on `#60 <https://github.com/moremoban/pypi-mobans/pull/60>`_
 
 0.0.2 - 18-01-2019
 --------------------------------------------------------------------------------

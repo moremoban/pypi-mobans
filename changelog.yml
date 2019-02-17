@@ -2,10 +2,20 @@ name: "pypi-mobans"
 organisation: moremoban
 releases:
 - changes:
+  - action: Updated
+    details:
+    - "travis-ci: uses xenial dist. dropped python 3.4, 3.7-dev and added 3.7, pypy2 and pypy3"
+    - "added min_requirements.txt where minimum requirements are computed"
+    - "#71: include tests folder as test_suite if 'tests' folder exists"
+    - "#16: package data / MANIFEST.in.jj2 is not easy to customise"
+    - "#14: Mandatory CHANGELOG.rst become optional"
+  date: unreleased
+  version: 0.0.4
+- changes:
   - action: First release
     details:
-    - "bug fix on `PR#60z`"
-  date: 18-01-2018
+    - "bug fix on `PR#60`"
+  date: 18-01-2019
   version: 0.0.3
 - changes:
   - action: Added
