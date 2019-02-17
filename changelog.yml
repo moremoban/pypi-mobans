@@ -9,7 +9,7 @@ releases:
     - "#71: include tests folder as test_suite if 'tests' folder exists"
     - "#16: package data / MANIFEST.in.jj2 is not easy to customise"
     - "#14: Mandatory CHANGELOG.rst become optional"
-  date: unreleased
+  date: 18-02-2019
   version: 0.0.4
 - changes:
   - action: First release
