@@ -1,5 +1,5 @@
 requires:
-  - https://github.com/sphinx-doc/sphinx
+  - https://github.com/sphinx-doc/sphinx.git
 configuration:
   configuration: config/data.yml
   template_dir:
@@ -13,8 +13,8 @@ targets:
   - output: CHANGELOG.rst
     configuration: changelog.yml
     template: CHANGELOG.rst.jj2
-copy:
-  - templates/docs/Makefile.jj2: Makefile.new_t
-  - templates/docs/make.bat.jj2: make.bat.new_t
-  - templates/docs/master_doc.rst_t: master_doc.rst_t
-  - templates/docs/conf.py_t: conf.py_t
+  - copy:
+    - templates/docs/Makefile.jj2: Makefile.new_t
+    - templates/docs/make.bat.jj2: make.bat.new_t
+    - templates/docs/master_doc.rst_t: master_doc.rst_t
+    - templates/docs/conf.py_t: conf.py_t

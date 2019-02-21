@@ -1,5 +1,16 @@
 include README.rst
 include LICENSE
+{% if 'CHANGELOG.rst' is exists %}
 include CHANGELOG.rst
+{% endif %}
+{% if 'CONTRIBUTORS.rst' is exists %}
+include CONTRIBUTORS.rst
+{% endif %}
+{% if 'tests' is exists %}
+recursive-include tests *
+{% endif %}
+{% if 'docs' is exists %}
+recursive-include docs *
+{% endif %}
 {%block more_options%}
 {%endblock%}
