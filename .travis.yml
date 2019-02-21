@@ -24,3 +24,4 @@ script:
   - find templates/ -type f -name '*.jj2' -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
   - moban -c config/data.yml -t test.file -td templates .
   - pytest
+  - flake8

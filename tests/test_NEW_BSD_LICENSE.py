@@ -1,5 +1,3 @@
-import jinja2
-
 from test_utils import get_rendered_file
 
 
