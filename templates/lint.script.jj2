@@ -1,0 +1,1 @@
+flake8 . --exclude=.moban.d,docs {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%}
