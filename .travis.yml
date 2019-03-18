@@ -26,12 +26,16 @@ stages:
   install: pip install flake8
   script: flake8
 
+.moban: &moban
+  <<: *disable_global
+  python: 2.7
+  stage: moban
+  install: pip install moban>=0.0.4
+  script: make
+
 jobs:
   include:
-    - stage: moban
-      script:
-        - make
-        - git diff --exit-code
+    - *moban
     - *lint
 
 stage: test
