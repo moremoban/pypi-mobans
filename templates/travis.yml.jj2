@@ -1,3 +1,9 @@
+{% if lint_command %}
+{% set lint = lint_command%}
+{% else %}
+{% set lint = 'flake8' %}
+{% endif %}
+
 sudo: false
 dist: xenial
 language: python
@@ -36,7 +42,7 @@ stages:
   python: 3.6
   stage: lint
   install: pip install flake8
-  script: flake8
+  script: {{ lint }}
 
 jobs:
   include:
