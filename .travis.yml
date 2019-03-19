@@ -10,13 +10,33 @@ install:
 stages:
   - test
   - moban
+  - lint
+
+.disable_global: &disable_global
+  before_install: false
+  install: true
+  before_script: false
+  after_success: false
+  after_failure: false
+
+.lint: &lint
+  <<: *disable_global
+  python: 3.6
+  stage: lint
+  install: pip install flake8
+  script: flake8
+
+.moban: &moban
+  <<: *disable_global
+  python: 2.7
+  stage: moban
+  install: pip install moban>=0.0.4
+  script: make
 
 jobs:
   include:
-    - stage: moban
-      script:
-        - make
-        - git diff --exit-code
+    - *moban
+    - *lint
 
 stage: test
 
@@ -24,4 +44,3 @@ script:
   - find templates/ -type f -name '*.jj2' -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
   - moban -c config/data.yml -t test.file -td templates .
   - pytest
-  - flake8
