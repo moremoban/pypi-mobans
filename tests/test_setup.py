@@ -1,4 +1,4 @@
-from test_utils import get_rendered_file, get_file_content
+from test_utils import get_file_content, get_rendered_file
 
 
 def test_setup():
