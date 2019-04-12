@@ -134,6 +134,15 @@ CLASSIFIERS = [
     {% if min_python_version <= ["3","6"] %}
     "Programming Language :: Python :: 3.6",
     {% endif %}
+
+    {% if min_python_version <= ["3","7"] %}
+    "Programming Language :: Python :: 3.7",
+    {% endif %}
+
+    {% if min_python_version <= ["3","8"] %}
+    "Programming Language :: Python :: 3.8",
+    {% endif %}
+
     {%block additional_classifiers%}
     {%endblock %}
 ]
