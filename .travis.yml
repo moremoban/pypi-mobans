@@ -31,12 +31,16 @@ stages:
   python: 2.7
   stage: moban
   install: pip install moban>=0.0.4
-  script: make
+  script:
+    - make
+    - make push	
 
 jobs:
   include:
     - *moban
     - *lint
+  allow_failures:
+    - test
 
 stage: test
 
