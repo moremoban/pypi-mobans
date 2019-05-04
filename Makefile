@@ -9,6 +9,5 @@ push:
 	git config user.email "travis@travis-ci.org"
 	git config user.name "traviscibot"
 	git add .
-	git reset HEAD =0.0.4
 	git commit -m "Sync templates [skip ci]"
 	git push https://moremoban:${GITHUB_TOKEN}@github.com/moremoban/pypi-mobans HEAD:moban -f
