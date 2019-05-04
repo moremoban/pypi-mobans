@@ -8,6 +8,7 @@ DESCRIPTION = (
     ''
 )
 {% set project = name %}
+{% set master = 'index' %}
 {% set copyright = '{0} {1}'.format(copyright_year, company) %}
 {% if sphinx_extensions %}
 {%   set extensions = sphinx_extensions %}
