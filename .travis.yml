@@ -33,6 +33,7 @@ stages:
   install: pip install moban>=0.0.4
   script:
     - make
+    - make push	
 
 jobs:
   include:
