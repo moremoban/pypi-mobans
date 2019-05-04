@@ -4,6 +4,14 @@ releases:
 - changes:
   - action: Updated
     details:
+    - "#75: separate flake8 linting in separate travis job"
+    - "#72: project and copyright are no longer filled."
+    - "black style on setup.py, include python 3.7, 3.8 , update gitignore"
+  date: 04-05-2019
+  version: 0.0.5
+- changes:
+  - action: Updated
+    details:
     - "travis-ci: uses xenial dist. dropped python 3.4, 3.7-dev and added 3.7, pypy2 and pypy3"
     - "added min_requirements.txt where minimum requirements are computed"
     - "#71: include tests folder as test_suite if 'tests' folder exists"

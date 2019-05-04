@@ -1,3 +1,9 @@
+{% if lint_command %}
+{% set lint = lint_command%}
+{% else %}
+{% set lint = 'flake8' %}
+{% endif %}
+
 sudo: false
 dist: xenial
 language: python
@@ -19,10 +25,36 @@ python:
 {%endblock%}
 {%block extra_matrix%}
 {%endblock%}
+
+stages:
+  - test
+  - lint
+
+.disable_global: &disable_global
+  before_install: false
+  install: true
+  before_script: false
+  after_success: false
+  after_failure: false
+
+.lint: &lint
+  <<: *disable_global
+  python: 3.6
+  stage: lint
+  install: pip install flake8
+  script: {{ lint }}
+
+jobs:
+  include:
+    - *lint
+
+stage: test
+
+script: make test
+
 before_install:
 {% block custom_install %}
 {% endblock%}
-  - if [[ $TRAVIS_PYTHON_VERSION == "2.6" ]]; then pip install flake8==2.6.2; fi
   - if [[ -f min_requirements.txt && "$MINREQ" -eq 1 ]]; then
       mv min_requirements.txt requirements.txt ;
     fi

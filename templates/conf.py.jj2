@@ -7,12 +7,8 @@ DESCRIPTION = (
 {% endfor %}
     ''
 )
-{% set project_str = name %}
-{% set copyright_str = '{0} {1}'.format(copyright_year, company) %}
-{% set author_str = author %}
-{% set author = company %}
-{% set version_str = release %}
-{% set release_str = version %}
+{% set project = name %}
+{% set copyright = '{0} {1}'.format(copyright_year, company) %}
 {% if sphinx_extensions %}
 {%   set extensions = sphinx_extensions %}
 {% else %}
