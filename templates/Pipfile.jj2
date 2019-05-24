@@ -8,9 +8,23 @@ python_version= '3.6'
 
 [packages]
 {% for dependency in dependencies: %}
-  {% if ('=' in dependency) or ('>' in dependency) or ('<' in dependency) %}
-    {{dependency}}
-  {% else %}
+  {% if ('>' in dependency) %}
+    {%- with dep, ver = dependency.split('>') -%}
+      {{dep}} = '>{{ver}}'
+    {% endwith %}
+  {% elif ('<' in dependency) %}
+    {%- with dep, ver = dependency.split('<') -%}
+      {{dep}} = '<{{ver}}'
+    {% endwith %}
+  {% elif ('~' in dependency) %}
+    {%- with dep, ver = dependency.split('~') -%}
+      {{dep}} = '~{{ver}}'
+    {% endwith %}
+  {% elif ('=' in dependency) %}
+    {%- with dep, ver = dependency.split('=', 1) -%}
+      {{dep}} = '={{ver}}'
+    {% endwith %}
+  {%- else -%}
     {{dependency}} = "*"
   {% endif %}
 {% endfor %}
@@ -23,10 +37,24 @@ coverage = "*"
 flake8 = "*"
 {% if dev_dependencies is defined %}
   {% for dependency in dev_dependencies: %}
-    {% if ('=' in dependency) or ('>' in dependency) or ('<' in dependency) %}
-      {{dependency}}
-    {% else %}
+    {% if ('>' in dependency) %}
+      {%- with dep, ver = dependency.split('>') -%}
+        {{dep}} = '>{{ver}}'
+      {% endwith %}
+    {% elif ('<' in dependency) %}
+      {%- with dep, ver = dependency.split('<') -%}
+        {{dep}} = '<{{ver}}'
+      {% endwith %}
+    {% elif ('~' in dependency) %}
+      {%- with dep, ver = dependency.split('~') -%}
+        {{dep}} = '~{{ver}}'
+      {% endwith %}
+    {% elif ('=' in dependency) %}
+      {%- with dep, ver = dependency.split('=', 1) -%}
+        {{dep}} = '={{ver}}'
+      {% endwith %}
+    {%- else -%}
       {{dependency}} = "*"
-    {% endif %}
-  {% endfor %}
+    {% endif %}  
+  {%- endfor %}
 {% endif %}
