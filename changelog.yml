@@ -4,6 +4,15 @@ releases:
 - changes:
   - action: Updated
     details:
+    - "#87: updated the pipfile syntax"
+  - action: Added
+    details:
+    - "#87: Added tests for pipfile generation"
+  date: 25-05-2019
+  version: 0.0.6
+- changes:
+  - action: Updated
+    details:
     - "#75: separate flake8 linting in separate travis job"
     - "#72: project and copyright are no longer filled."
     - "black style on setup.py, include python 3.7, 3.8 , update gitignore"
