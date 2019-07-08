@@ -7,6 +7,22 @@
 {% set min_python_version = min_python_version|default('2.6') %}
 {% set min_python_version = min_python_version.split('.', 2) %}
 
+{# marker_dependencies is implemented as a defaultdict(list)
+   See https://gsnedders.github.io/python-marker-test/results.html
+   for acceptable markers ("without parser" columns) #}
+{% set marker_dependencies = {} %}
+{% for dependency in dependencies: %}
+  {% if ';' in dependency %}
+    {% set dependency, marker = dependency.split(';') %}
+    {% set dependency, marker = dependency.strip(), marker.strip() %}
+    {% set marker = marker.replace('"', "'") %}
+    {% if marker in marker_dependencies %}
+      {% set _ = marker_dependencies[marker].append(dependency) %}
+    {% else %}
+      {% set _ = marker_dependencies.__setitem__(marker, [dependency]) %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
 {% block header %}
 # Template by pypi-mobans
 {% endblock %}
@@ -16,13 +32,24 @@ import os
 import platform
 import sys
 from shutil import rmtree
+
 {% if external_module_library %}
 from distutils.core import setup, Extension
 {% else %}
-
 from setuptools import Command, find_packages, setup
-
 {%endif%}
+{% if marker_dependencies and setup_use_markers and setup_use_markers_fix %}
+from setuptools import __version__ as setuptools_version
+from pkg_resources import parse_version
+
+import pkg_resources
+
+try:
+    import _markerlib.markers
+except ImportError:
+    _markerlib = None
+{% endif %}
+
 {%block compat_block%}
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
@@ -188,7 +215,7 @@ SETUP_COMMANDS = {}
 {% endblock %}
 
 {% for dependency in dependencies: %}
-  {%  if ';' in dependency: %}
+  {%  if not setup_use_markers and ';' in dependency: %}
 {{handle_complex_dependency(dependency)}}
   {%   endif %}
 {% endfor %}
@@ -212,6 +239,11 @@ EXTRAS_REQUIRE = {
     "{{key}}": {{value}},
      {% endfor %}
   {% endfor %}
+  {% if setup_use_markers %}
+    {% for marker, dependencies in marker_dependencies.items(): %}
+    ":{{marker}}": ["{{dependencies | list|join('", "')}}"],
+    {% endfor %}
+  {% endif %}
 }
 {% else: %}
 EXTRAS_REQUIRE = {}
@@ -330,6 +362,50 @@ def filter_out_test_code(file_handle):
             else:
                 yield line
 
+{% if marker_dependencies and setup_use_markers and setup_use_markers_fix %}
+
+# _markerlib.default_environment() obtains its data from _VARS
+# and wraps it in another dict, but _markerlib_evaluate writes
+# to the dict while it is iterating the keys, causing an error
+# on Python 3 only.
+# Replace _markerlib.default_environment to return a custom dict
+# that has all the necessary markers, and ignores any writes.
+
+class Python3MarkerDict(dict):
+
+    def __setitem__(self, key, value):
+        pass
+
+    def pop(self, i=-1):
+        return self[i]
+
+
+if _markerlib and sys.version_info[0] == 3:
+    env = _markerlib.markers._VARS
+    for key in list(env.keys()):
+        new_key = key.replace(".", "_")
+        if new_key != key:
+            env[new_key] = env[key]
+
+    _markerlib.markers._VARS = Python3MarkerDict(env)
+
+    def default_environment():
+        return _markerlib.markers._VARS
+
+    _markerlib.default_environment = default_environment
+
+# Avoid the very buggy pkg_resources.parser, which does not consistently
+# recognise the markers needed by this setup.py
+# See https://github.com/pypa/packaging/issues/72 for details
+# Change this to setuptools 20.10.0 to support all markers.
+if pkg_resources:
+    if parse_version(setuptools_version) < parse_version("18.5"):
+        MarkerEvaluation = pkg_resources.MarkerEvaluation
+
+        del pkg_resources.parser
+        pkg_resources.evaluate_marker = MarkerEvaluation._markerlib_evaluate
+        MarkerEvaluation.evaluate_marker = MarkerEvaluation._markerlib_evaluate
+{% endif %}
 
 if __name__ == "__main__":
     setup(
