@@ -160,6 +160,8 @@ if PY26:
 {% endif %}
 {% if condition == 'platform_python_implementation=="PyPy"'%}
 if platform.python_implementation == "PyPy":
+{% else %}
+if {{ condition.replace('python_version', 'sys.version[:3]') }}:
 {%endif%}
     INSTALL_REQUIRES.append('{{dependency}}')
 {%- endmacro %}
