@@ -39,7 +39,7 @@ jobs:
     - *moban
     - *lint
   allow_failures:
-    - test
+    - stage: test
 
 stage: test
 
