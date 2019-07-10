@@ -28,7 +28,7 @@ stages:
 
 .moban: &moban
   <<: *disable_global
-  python: 2.7
+  python: 3.6
   stage: moban
   install: pip install moban>=0.0.4
   script:
@@ -39,7 +39,7 @@ jobs:
     - *moban
     - *lint
   allow_failures:
-    - test
+    - stage: test
 
 stage: test
 
