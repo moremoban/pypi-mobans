@@ -1,55 +1,55 @@
-name: "pypi-mobans"
+name: pypi-mobans
 organisation: moremoban
 releases:
-- changes:
-  - action: Updated
-    details:
-    - "#87: updated the pipfile syntax"
-  - action: Added
-    details:
-    - "#87: Added tests for pipfile generation"
-  date: 25-05-2019
-  version: 0.0.6
-- changes:
-  - action: Updated
-    details:
-    - "#75: separate flake8 linting in separate travis job"
-    - "#72: project and copyright are no longer filled."
-    - "black style on setup.py, include python 3.7, 3.8 , update gitignore"
-  date: 04-05-2019
-  version: 0.0.5
-- changes:
-  - action: Updated
-    details:
-    - "travis-ci: uses xenial dist. dropped python 3.4, 3.7-dev and added 3.7, pypy2 and pypy3"
-    - "added min_requirements.txt where minimum requirements are computed"
-    - "#71: include tests folder as test_suite if 'tests' folder exists"
-    - "#16: package data / MANIFEST.in.jj2 is not easy to customise"
-    - "#14: Mandatory CHANGELOG.rst become optional"
-  date: 18-02-2019
-  version: 0.0.4
-- changes:
-  - action: First release
-    details:
-    - "bug fix on `PR#60`"
-  date: 18-01-2019
-  version: 0.0.3
-- changes:
-  - action: Added
-    details:
-    - "`PR#60`: codec and locale hacks added"
-    - "`PR#61`: add python classifiers"
-  - action: Updated
-    details:
-    - "`PR#63`: updated Pipfile implementation"
-    - Synchronize with sphinx doc file at release date
-  date: 18-01-2019
-  version: 0.0.2
-- changes:
-  - action: First release
-    details:
-    - versioning is applied
-    - Pipfile included
-  date: 05-11-2018
-  version: 0.0.1
-
+  - changes:
+      - action: Updated
+        details:
+          - "#87: updated the pipfile syntax"
+      - action: Added
+        details:
+          - "#87: Added tests for pipfile generation"
+    date: 25-05-2019
+    version: 0.0.6
+  - changes:
+      - action: Updated
+        details:
+          - "#75: separate flake8 linting in separate travis job"
+          - "#72: project and copyright are no longer filled."
+          - black style on setup.py, include python 3.7, 3.8 , update gitignore
+    date: 04-05-2019
+    version: 0.0.5
+  - changes:
+      - action: Updated
+        details:
+          - "travis-ci: uses xenial dist. dropped python 3.4, 3.7-dev and added
+             3.7, pypy2 and pypy3"
+          - added min_requirements.txt where minimum requirements are computed
+          - "#71: include tests folder as test_suite if 'tests' folder exists"
+          - "#16: package data / MANIFEST.in.jj2 is not easy to customise"
+          - "#14: Mandatory CHANGELOG.rst become optional"
+    date: 18-02-2019
+    version: 0.0.4
+  - changes:
+      - action: First release
+        details:
+          - "bug fix on `PR#60`"
+    date: 18-01-2019
+    version: 0.0.3
+  - changes:
+      - action: Added
+        details:
+          - "`PR#60`: codec and locale hacks added"
+          - "`PR#61`: add python classifiers"
+      - action: Updated
+        details:
+          - "`PR#63`: updated Pipfile implementation"
+          - Synchronize with sphinx doc file at release date
+    date: 18-01-2019
+    version: 0.0.2
+  - changes:
+      - action: First release
+        details:
+          - versioning is applied
+          - Pipfile included
+    date: 05-11-2018
+    version: 0.0.1
