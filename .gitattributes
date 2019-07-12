@@ -1,0 +1,4 @@
+# Include changes from both sides
+changelog.yml merge=union
+# Include regenerated files as-is using binary merge driver
+CHANGELOG.rst merge=binary
