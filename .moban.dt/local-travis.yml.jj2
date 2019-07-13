@@ -1,0 +1,24 @@
+{% extends 'travis.yml.jj2' %}
+
+{% block custom_python_versions %}
+python:
+  - 3.7
+  - 2.7
+{% endblock %}
+
+{% block extra_jobs %}
+  allow_failures:
+    - stage: test
+{% endblock %}
+
+{% block before_script %}
+before_script:
+  - find templates/ -type f -name '*.jj2' -exec echo '{}' \; |{% raw %}
+    sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
+{% endraw %}
+{% endblock %}
+
+{% block script %}
+  - moban -c config/data.yml -t test.file -td templates .
+  - {{ test_command }}
+{% endblock %}

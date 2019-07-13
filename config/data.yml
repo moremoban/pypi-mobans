@@ -16,3 +16,6 @@ rsrcdir: docs/source
 rbuilddir: docs/_build
 version: 0.1.1rc3
 mastertocmaxdepth: 3
+lint_command: make install_test lint
+moban_command: make upstreaming git-diff-check
+test_command: pytest

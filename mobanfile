@@ -8,6 +8,7 @@ configuration:
     - sphinx:sphinx/templates/quickstart
 targets:
   - .gitignore: gitignore.jj2
+  - .travis.yml: local-travis.yml.jj2
   - LICENSE: NEW_BSD_LICENSE.jj2
   - README.rst: local-README.rst.jj2
   - output: CHANGELOG.rst

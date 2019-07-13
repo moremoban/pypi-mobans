@@ -1,10 +1,15 @@
-{% if lint_command %}
-{% set lint = lint_command%}
-{% else %}
-{% set lint = 'flake8' %}
+{% if not lint_command and lint_command != False %}
+{% set lint_command = 'flake8' %}
+{% endif %}
+{% if not moban_command and moban_command != False %}
+{%   if mobanfile %}
+{%     set moban_command = 'moban -m ' + mobanfile %}
+{%   else %}
+{%     set moban_command = 'moban' %}
+{%   endif %}
 {% endif %}
 sudo: false
-dist: xenial
+dist: {{ travis_dist | default('xenial') }}
 language: python
 notifications:
   email: false
@@ -25,40 +30,97 @@ python:
 {%block extra_matrix%}
 {%endblock%}
 
+{% block stages %}
 stages:
   - test
+{% if lint_command != False %}
   - lint
+{% endif %}
+{% if moban_command != False %}
+  - moban
+{% endif %}
 
+{% endblock %}
 .disable_global: &disable_global
+  addons: false
+  cache: false
+  env: {}
+  python: false
   before_install: false
   install: false
   before_script: false
+  script: false
   after_success: false
   after_failure: false
+  before_deploy: false
+  deploy: false
 
+{% if lint_command != False %}
 .lint: &lint
   <<: *disable_global
+  git:
+    submodules: false
   python: 3.6
   stage: lint
+{% if lint_command == 'flake8' %}
   install: pip install flake8
-  script: {{ lint }}
+{% endif %}
+  script: {{ lint_command }}
 
+{% endif %}
+{% if moban_command != False %}
+.moban: &moban
+  <<: *disable_global
+  python: 3.6
+  stage: moban
+  install: pip install moban>=0.0.4
+{% if moban_command.startswith('moban') and 'exit-code' not in moban_command %}
+  script:
+    - {{ moban_command }}
+{%   if moban_allow_trailing_whitespace %}
+    - git diff
+    - git diff --ignore-blank-lines |
+      while read line; do if [ "$line" ]; then exit 1; fi; done
+{%   else %}
+    - git diff --exit-code
+{%   endif %}
+{% else %}
+  script: {{ moban_command }}
+{% endif %}
+
+{% endif %}
+{% block extra_dot_blocks %}
+{% endblock %}
+{% block jobs %}
 jobs:
   include:
+    - *moban
     - *lint
+{% block extra_jobs %}
+{% endblock %}
+{% endblock %}
 
 stage: test
 
+{% block before_install %}
 before_install:
 {% block custom_install %}
 {% endblock%}
   - if [[ -f min_requirements.txt && "$MINREQ" -eq 1 ]]; then
       mv min_requirements.txt requirements.txt ;
     fi
-  - test ! -f rnd_requirements.txt || pip install --no-deps -r rnd_requirements.txt
+  - test ! -f rnd_requirements.txt ||
+    pip install --no-deps -r rnd_requirements.txt
   - test ! -f rnd_requirements.txt || pip install -r rnd_requirements.txt ;
   - pip install -r tests/requirements.txt
+{% endblock %}
+{% block before_script %}
+{% endblock %}
 script:
+{% block script %}
   - {{ test_command | default('make test') }}
+{% endblock %}
+{% block end %}
 after_success:
   codecov
+{% endblock %}
