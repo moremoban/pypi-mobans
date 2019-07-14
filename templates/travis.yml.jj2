@@ -3,7 +3,6 @@
 {% else %}
 {% set lint = 'flake8' %}
 {% endif %}
-
 sudo: false
 dist: xenial
 language: python
@@ -50,8 +49,6 @@ jobs:
 
 stage: test
 
-script: make test
-
 before_install:
 {% block custom_install %}
 {% endblock%}
@@ -62,6 +59,6 @@ before_install:
   - test ! -f rnd_requirements.txt || pip install -r rnd_requirements.txt ;
   - pip install -r tests/requirements.txt
 script:
-  - make test
+  - {{ test_command | default('make test') }}
 after_success:
   codecov
