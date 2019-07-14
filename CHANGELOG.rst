@@ -1,6 +1,31 @@
 Change log
 ================================================================================
 
+0.0.7 - tba
+--------------------------------------------------------------------------------
+
+Updated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. sync templates/docs/make.bat.jj2 to include changes from
+   https://github.com/sphinx-doc/sphinx/commit/0dbdae31
+#. #100: Fixed travis.yml.jj2 to not emit yamllint errors
+#. #101: Fixed travis.yml.jj2 .disable_global to reset `install:`
+#. #31: Added test_command to override travis.yml.jj2 use of Makefile
+#. #96: Expanded travis.yml.jj2 and use in in the pypi-mobans repo
+#. #88: Enhanced min_requirements.txt.jj2 support for dependencies with multiple
+   constraints such as `>1,<3`
+#. #93: Added CI to ensure pypi-mobans is in sync with upstream
+#. #99: Formated changelog.yml according to yamllint default rules
+
+Added
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. #89: setup.py.jj2 support for dependencies using all PEP 508 environment
+   markers; enable setup_use_markers to activate, and enable
+   setup_use_markers_fix to use with setuptools pre v22
+#. #98: Added .gitattributes to reduce conflicts on changelog.yml
+
 0.0.6 - 25-05-2019
 --------------------------------------------------------------------------------
 
