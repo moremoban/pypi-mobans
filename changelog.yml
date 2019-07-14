@@ -20,7 +20,7 @@ releases:
              environment markers; enable setup_use_markers to activate, and
              enable setup_use_markers_fix to use with setuptools pre v22"
           - "#98: Added .gitattributes to reduce conflicts on changelog.yml"
-    date: tba
+    date: 14.07.2019
     version: 0.0.7
   - changes:
       - action: Updated
