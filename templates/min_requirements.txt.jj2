@@ -1,7 +1,14 @@
 {% for dependency in dependencies: %}
-{%     if ';' in dependency: %}
-{{dependency.split(';')[0].replace('>=', '==').replace('>', '==') + ';' + dependency.split(';')[1]}}
-{%     else: %}
-{{dependency.replace('>=', '==').replace('>', '==')}}
-{%     endif %}
+{%   if ';' in dependency %}
+{%     set dependency, marker = dependency.split(';') %}
+{%   else %}
+{%     set marker = None %}
+{%   endif %}
+{%   set dependency = dependency.split(',')[0] %}
+{%   set dependency = dependency.replace('>=', '==').replace('>', '==') %}
+{%   if marker %}
+{{dependency + ';' + marker }}
+{%   else: %}
+{{dependency}}
+{%   endif %}
 {% endfor %}
