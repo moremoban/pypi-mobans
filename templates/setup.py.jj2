@@ -251,9 +251,13 @@ EXTRAS_REQUIRE = {}
 {% endif %}
 # You do not need to read beyond this line
 {% if nowheel %}
-PUBLISH_COMMAND = "{0} setup.py sdist upload -r pypi".format(sys.executable)
+PUBLISH_COMMAND = "{python} setup.py sdist upload -r pypi".format(
+    python=sys.executable
+)
 {% else %}
-PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
+PUBLISH_COMMAND = "{python} setup.py sdist bdist_wheel upload -r pypi".format(
+    python=sys.executable
+)
 {% endif %}
 GS_COMMAND = ("gs {{name}} v{{release}} " +
               "Find {{release}} in changelog for more details")
