@@ -14,7 +14,8 @@ releases:
             https://github.com/sphinx-doc/sphinx/commit/0dbdae31
           - "`#100`: Fixed travis.yml.jj2 to not emit yamllint errors"
           - "`#101`: Fixed travis.yml.jj2 .disable_global to reset `install:`"
-          - "`#31`: Added test_command to override travis.yml.jj2 use of Makefile"
+          - "`#31`: Added test_command to override travis.yml.jj2 use of
+            Makefile"
           - "`#96`: Expanded travis.yml.jj2 and use in in the pypi-mobans repo"
           - "`#88`: Enhanced min_requirements.txt.jj2 support for dependencies
              with multiple constraints such as `>1,<3`"
