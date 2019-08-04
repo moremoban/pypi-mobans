@@ -2,6 +2,12 @@ name: pypi-mobans
 organisation: moremoban
 releases:
   - changes:
+      - action: Fixed
+        details:
+          - "`#114`: setup.py.jj2 gets default console_scripts entry no matter what."
+    date: tba
+    version: 0.0.8
+  - changes:
       - action: Updated
         details:
           - sync templates/docs/make.bat.jj2 to include changes from
