@@ -4,7 +4,7 @@ releases:
   - changes:
       - action: Fixed
         details:
-          - "`#114`: setup.py.jj2 gets default console_scripts entry no matter what."
+          - "`#114`: setup.py.jj2 gets default console_scripts entry always"
     date: tba
     version: 0.0.8
   - changes:
