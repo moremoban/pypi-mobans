@@ -8,6 +8,8 @@ Change log
 
 #. `#114 <https://github.com/moremoban/pypi-mobans/issues/114>`_: setup.py.jj2
    gets default console_scripts entry always
+#. `#120 <https://github.com/moremoban/pypi-mobans/issues/120>`_: changelog rst
+   syntax cause 400 error
 
 **Updated**
 
