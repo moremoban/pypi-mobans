@@ -4,17 +4,14 @@ Change log
 0.0.8 - tba
 --------------------------------------------------------------------------------
 
-Fixed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Fixed**
 
 #. `#114 <https://github.com/moremoban/pypi-mobans/issues/114>`_: setup.py.jj2
    gets default console_scripts entry always
+#. `#120 <https://github.com/moremoban/pypi-mobans/issues/120>`_: changelog rst
+   syntax cause 400 error
 
-0.0.8 - tba
---------------------------------------------------------------------------------
-
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. `moban#295 <https://github.com/moremoban/moban/issues/295>`_: limit publish
    command in setup.py to be less than 79
@@ -22,8 +19,7 @@ Updated
 0.0.7 - 14.07.2019
 --------------------------------------------------------------------------------
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. sync templates/docs/make.bat.jj2 to include changes from
    https://github.com/sphinx-doc/sphinx/commit/0dbdae31
@@ -43,8 +39,7 @@ Updated
 #. `#99 <https://github.com/moremoban/pypi-mobans/issues/99>`_: Formated
    changelog.yml according to yamllint default rules
 
-Added
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Added**
 
 #. `#89 <https://github.com/moremoban/pypi-mobans/issues/89>`_: setup.py.jj2
    support for dependencies using all PEP 508 environment markers; enable
@@ -56,14 +51,12 @@ Added
 0.0.6 - 25-05-2019
 --------------------------------------------------------------------------------
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. `#87 <https://github.com/moremoban/pypi-mobans/issues/87>`_: updated the
    pipfile syntax
 
-Added
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Added**
 
 #. `#87 <https://github.com/moremoban/pypi-mobans/issues/87>`_: Added tests for
    pipfile generation
@@ -71,8 +64,7 @@ Added
 0.0.5 - 04-05-2019
 --------------------------------------------------------------------------------
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. `#75 <https://github.com/moremoban/pypi-mobans/issues/75>`_: separate flake8
    linting in separate travis job
@@ -83,8 +75,7 @@ Updated
 0.0.4 - 18-02-2019
 --------------------------------------------------------------------------------
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. travis-ci: uses xenial dist. dropped python 3.4, 3.7-dev and added 3.7, pypy2
    and pypy3
@@ -99,24 +90,21 @@ Updated
 0.0.3 - 18-01-2019
 --------------------------------------------------------------------------------
 
-First release
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**First release**
 
 #. bug fix on `#60 <https://github.com/moremoban/pypi-mobans/pull/60>`_
 
 0.0.2 - 18-01-2019
 --------------------------------------------------------------------------------
 
-Added
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Added**
 
 #. `#60 <https://github.com/moremoban/pypi-mobans/pull/60>`_: codec and locale
    hacks added
 #. `#61 <https://github.com/moremoban/pypi-mobans/pull/61>`_: add python
    classifiers
 
-Updated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Updated**
 
 #. `#63 <https://github.com/moremoban/pypi-mobans/pull/63>`_: updated Pipfile
    implementation
@@ -125,8 +113,7 @@ Updated
 0.0.1 - 05-11-2018
 --------------------------------------------------------------------------------
 
-First release
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**First release**
 
 #. versioning is applied
 #. Pipfile included
