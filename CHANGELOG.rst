@@ -10,6 +10,8 @@ Change log
    gets default console_scripts entry always
 #. `#120 <https://github.com/moremoban/pypi-mobans/issues/120>`_: changelog rst
    syntax cause 400 error
+#. `#122 <https://github.com/moremoban/pypi-mobans/issues/122>`_:
+   UPLOAD_FAILED_MSG cannot be formatted
 
 **Updated**
 

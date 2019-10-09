@@ -6,6 +6,7 @@ releases:
         details:
           - "`#114`: setup.py.jj2 gets default console_scripts entry always"
           - "`#120`: changelog rst syntax cause 400 error"
+          - "`#122`: UPLOAD_FAILED_MSG cannot be formatted"
       - action: Updated
         details:
           - "`moban#295`: limit publish command in setup.py to be less than 79"

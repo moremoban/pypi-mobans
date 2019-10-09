@@ -20,5 +20,6 @@ before_script:
 
 {% block script %}
   - moban -c config/data.yml -t test.file -td templates .
+  - pip freeze
   - {{ test_command }}
 {% endblock %}

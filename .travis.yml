@@ -63,6 +63,7 @@ before_script:
     sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
 script:
   - moban -c config/data.yml -t test.file -td templates .
+  - pip freeze
   - pytest
 after_success:
   codecov

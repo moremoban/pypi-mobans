@@ -1,11 +1,9 @@
-requires:
-  - https://github.com/sphinx-doc/sphinx.git
 configuration:
   configuration: config/data.yml
   template_dir:
     - .moban.dt
     - templates
-    - sphinx:sphinx/templates/quickstart
+    - "git://github.com/sphinx-doc/sphinx.git!/sphinx/templates/quickstart"
 targets:
   - .gitignore: gitignore.jj2
   - .travis.yml: local-travis.yml.jj2
