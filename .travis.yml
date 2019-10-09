@@ -64,6 +64,6 @@ before_script:
 script:
   - moban -c config/data.yml -t test.file -td templates .
   - pip freeze
-  - pytest
+  - nosetests --verbosity=3
 after_success:
   codecov
