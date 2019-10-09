@@ -1,12 +1,13 @@
 import os
 
-from moban.jinja2.engine import Engine
+from moban.plugins.jinja2.engine import Engine
+from moban.externals import file_system
 
 PATH_TO_TEMPLATES = './templates'
 
 
 def get_rendered_file(filename, context):
-    engine = Engine([PATH_TO_TEMPLATES])
+    engine = Engine(file_system.get_multi_fs([PATH_TO_TEMPLATES]))
     template = engine.get_template(filename)
     rendered = engine.apply_template(template, context, '')
     return rendered
