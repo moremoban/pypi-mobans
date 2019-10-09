@@ -1,6 +1,6 @@
 import os
 
-from moban.plugins.jinja2.engine import Engine
+from moban.jinja2.engine import Engine
 from moban.externals import file_system
 
 PATH_TO_TEMPLATES = './templates'
