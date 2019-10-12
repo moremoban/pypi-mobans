@@ -88,7 +88,7 @@ MAINTAINER_CONTACT = "{{maintainer_contact}}"
 {% endif %}
 {% if command_line_interface or entry_points %}
 ENTRY_POINTS = {
-{% if not entry_points or 'console_scripts' not in entry_points %}
+{% if (not entry_points or 'console_scripts' not in entry_points) and command_line_interface %}
     "console_scripts": [
         "{{command_line_interface}} = {{ entry_point }}"
     ],
@@ -298,7 +298,7 @@ class PublishCommand(Command):
             self.status(NO_GS_MESSAGE)
         if run_status:
             if os.system(PUBLISH_COMMAND) != 0:
-                self.status(UPLOAD_FAILED_MSG % PUBLISH_COMMAND)
+                self.status(UPLOAD_FAILED_MSG)
 
         sys.exit()
 

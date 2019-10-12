@@ -6,8 +6,7 @@ Change log
 --------------------------------------------------------------------------------
 
 {% for change in release.changes %}
-{{change.action}}
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**{{change.action}}**
 
 {% for item in change.details %}
 {% if item is mapping %}
