@@ -1,7 +1,7 @@
 Change log
 ================================================================================
 
-0.0.8 - tba
+0.0.8 - 13.10.2019
 --------------------------------------------------------------------------------
 
 **Fixed**
@@ -12,11 +12,6 @@ Change log
    syntax cause 400 error
 #. `#122 <https://github.com/moremoban/pypi-mobans/issues/122>`_:
    UPLOAD_FAILED_MSG cannot be formatted
-
-**Updated**
-
-#. `moban#295 <https://github.com/moremoban/moban/issues/295>`_: limit publish
-   command in setup.py to be less than 79
 
 0.0.7 - 14.07.2019
 --------------------------------------------------------------------------------
