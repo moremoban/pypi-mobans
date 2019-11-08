@@ -23,6 +23,14 @@
 .. image:: https://codecov.io/{{base_path}}{{suffix}}
    :target: https://codecov.io/{{base_path}}
 
+{% if release != "0.0.0" %}
+.. image:: https://badge.fury.io/py/{{name}}.svg
+   :target: https://pypi.org/project/{{name}}
+
+.. image:: https://pepy.tech/badge/{{name}}/month
+   :target: https://pepy.tech/project/{{name}}/month
+{% endif %}
+
 {% if gitter_room %}
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
    :target: https://gitter.im/{{gitter_room}}
