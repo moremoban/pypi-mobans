@@ -49,3 +49,4 @@ intersphinx_mapping.update({
 {% block intersphinx_mapping %}
 {% endblock %}
 })
+master_doc = "index"
