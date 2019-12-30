@@ -231,7 +231,7 @@ PYMODULE = Extension(
     libraries=INSTALL_REQUIRES
 )
 {% else %}
-PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests"])
+PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 {% if extra_dependencies or dependencies: %}
 EXTRAS_REQUIRE = {
   {% for dependency in extra_dependencies: %}
