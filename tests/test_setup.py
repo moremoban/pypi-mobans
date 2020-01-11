@@ -18,7 +18,8 @@ def test_setup():
 
 def test_setup_use_markers_true():
     filename = "setup.py.jj2"
-    with open(os.path.join("tests", "fixtures", "server_use_marker_true.yml")) as f:
+    config = os.path.join("tests", "fixtures", "server_use_marker_true.yml")
+    with open(config) as f:
         content = f.read()
     yaml = YAML(typ="safe")
     context = yaml.load(content)
@@ -29,7 +30,8 @@ def test_setup_use_markers_true():
 
 def test_setup_use_markers_false():
     filename = "setup.py.jj2"
-    with open(os.path.join("tests", "fixtures", "server_use_marker_false.yml")) as f:
+    config = os.path.join("tests", "fixtures", "server_use_marker_false.yml")
+    with open(config) as f:
         content = f.read()
     yaml = YAML(typ="safe")
     context = yaml.load(content)
