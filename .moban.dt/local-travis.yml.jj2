@@ -6,10 +6,6 @@ python:
   - 2.7
 {% endblock %}
 
-{% block extra_jobs %}
-  allow_failures:
-    - stage: test
-{% endblock %}
 
 {% block before_script %}
 before_script:
