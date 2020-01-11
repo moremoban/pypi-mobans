@@ -45,7 +45,6 @@ jobs:
   include:
     - *moban
     - *lint
-    - stage: test
 
 stage: test
 
