@@ -24,19 +24,22 @@
   {% endif %}
 {% endfor %}
 {% block header %}
-# Template by pypi-mobans
+'''
+Template by pypi-mobans
+'''
+
 {% endblock %}
+import os
+import sys
 import codecs
 import locale
-import os
 import platform
-import sys
 from shutil import rmtree
 
 {% if external_module_library %}
 from distutils.core import setup, Extension
 {% else %}
-from setuptools import Command, find_packages, setup
+from setuptools import Command, setup, find_packages
 {%endif%}
 {% if marker_dependencies and setup_use_markers and setup_use_markers_fix %}
 from setuptools import __version__ as setuptools_version
