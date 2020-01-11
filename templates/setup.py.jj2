@@ -214,12 +214,6 @@ INSTALL_REQUIRES = [
 SETUP_COMMANDS = {}
 {% endblock %}
 
-{% for dependency in dependencies: %}
-  {%  if not setup_use_markers and ';' in dependency: %}
-{{handle_complex_dependency(dependency)}}
-  {%   endif %}
-{% endfor %}
-
 {% if external_module_library %}
 PYMODULE = Extension(
     '{{name}}',
