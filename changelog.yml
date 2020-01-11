@@ -10,7 +10,8 @@ releases:
       - action: Updated
         details:
           - Test on python 3.8 instead of python 3.8-dev
-          - "`#131`: remove useless statements when a complex installation requirement is in place."
+          - "`#131`: remove useless statements when a complex
+            installation requirement is in place."
           - "`#128`: Exclude tests in installation package"
           - Install mock only on python 2
     date: 13.10.2019
