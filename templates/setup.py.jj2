@@ -24,9 +24,9 @@
   {% endif %}
 {% endfor %}
 {% block header %}
-'''
+"""
 Template by pypi-mobans
-'''
+"""
 
 {% endblock %}
 import os
@@ -165,16 +165,16 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.6",
     {% endif %}
 
-    {% if min_python_version <= ["3","7"] %}
+    {%- if min_python_version <= ["3","7"] %}
     "Programming Language :: Python :: 3.7",
     {% endif %}
 
-    {% if min_python_version <= ["3","8"] %}
+    {%- if min_python_version <= ["3","8"] %}
     "Programming Language :: Python :: 3.8",
     {% endif %}
 
-    {%block additional_classifiers%}
-    {%endblock %}
+    {% block additional_classifiers%}
+    {% endblock %}
 ]
 
 {%macro handle_complex_dependency(complex_one) -%}
