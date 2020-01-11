@@ -8,6 +8,7 @@ pypi-mobans
 .. image:: https://codecov.io/github/moremoban/pypi-mobans/coverage.png
    :target: https://codecov.io/github/moremoban/pypi-mobans
 
+
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
    :target: https://gitter.im/chfw_moban/Lobby
 

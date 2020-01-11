@@ -7,7 +7,7 @@ configuration:
 targets:
   - .gitignore: gitignore.jj2
   - .travis.yml: local-travis.yml.jj2
-  - LICENSE: NEW_BSD_LICENSE.jj2
+  - LICENSE: newbsd_license.jj2
   - README.rst: local-README.rst.jj2
   - output: CHANGELOG.rst
     configuration: changelog.yml
