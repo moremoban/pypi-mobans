@@ -1,6 +1,27 @@
 Change log
 ================================================================================
 
+0.0.9 - 13.10.2019
+--------------------------------------------------------------------------------
+
+**Added**
+
+#. pypi download stats are displayed in README
+#. Add mit license text
+#. `#126 <https://github.com/moremoban/pypi-mobans/issues/126>`_: support github
+   auto pypi publishing action
+#. `#133 <https://github.com/moremoban/pypi-mobans/issues/133>`_: provide CI
+   azure build yaml files
+
+**Updated**
+
+#. Test on python 3.8 instead of python 3.8-dev
+#. `#131 <https://github.com/moremoban/pypi-mobans/issues/131>`_: remove useless
+   statements when a complex installation requirement is in place.
+#. `#128 <https://github.com/moremoban/pypi-mobans/issues/128>`_: Exclude tests
+   in installation package
+#. Install mock only on python 2
+
 0.0.8 - 13.10.2019
 --------------------------------------------------------------------------------
 

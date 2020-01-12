@@ -8,6 +8,7 @@ pypi-mobans
 .. image:: https://codecov.io/github/moremoban/pypi-mobans/coverage.png
    :target: https://codecov.io/github/moremoban/pypi-mobans
 
+
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
    :target: https://gitter.im/chfw_moban/Lobby
 
@@ -63,6 +64,9 @@ Notes
 ================================================================================
 
 
+Release and publish from command line
+--------------------------------------------------------------------------------
+
 In order to run, `python setup.py publish`, you will have setup `.pypirc` in
 your home folder as::
 
@@ -76,3 +80,15 @@ your home folder as::
 
 
 And you need to configure `gease`.
+
+Auto publishing via github action
+--------------------------------------------------------------------------------
+
+
+In order to configure github to publish your package, you will need to set up
+two secrets::
+
+    PYPI_USERNAME
+    PYPI_PASSWORD
+
+Once you have done that, a github release will trigger an auto publishing.

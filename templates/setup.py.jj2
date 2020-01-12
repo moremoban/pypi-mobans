@@ -24,19 +24,22 @@
   {% endif %}
 {% endfor %}
 {% block header %}
-# Template by pypi-mobans
+"""
+Template by pypi-mobans
+"""
+
 {% endblock %}
+import os
+import sys
 import codecs
 import locale
-import os
 import platform
-import sys
 from shutil import rmtree
 
 {% if external_module_library %}
 from distutils.core import setup, Extension
 {% else %}
-from setuptools import Command, find_packages, setup
+from setuptools import Command, setup, find_packages
 {%endif%}
 {% if marker_dependencies and setup_use_markers and setup_use_markers_fix %}
 from setuptools import __version__ as setuptools_version
@@ -162,16 +165,16 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.6",
     {% endif %}
 
-    {% if min_python_version <= ["3","7"] %}
+    {%- if min_python_version <= ["3","7"] %}
     "Programming Language :: Python :: 3.7",
     {% endif %}
 
-    {% if min_python_version <= ["3","8"] %}
+    {%- if min_python_version <= ["3","8"] %}
     "Programming Language :: Python :: 3.8",
     {% endif %}
 
-    {%block additional_classifiers%}
-    {%endblock %}
+    {% block additional_classifiers%}
+    {% endblock %}
 ]
 
 {%macro handle_complex_dependency(complex_one) -%}
@@ -214,12 +217,6 @@ INSTALL_REQUIRES = [
 SETUP_COMMANDS = {}
 {% endblock %}
 
-{% for dependency in dependencies: %}
-  {%  if not setup_use_markers and ';' in dependency: %}
-{{handle_complex_dependency(dependency)}}
-  {%   endif %}
-{% endfor %}
-
 {% if external_module_library %}
 PYMODULE = Extension(
     '{{name}}',
@@ -231,7 +228,7 @@ PYMODULE = Extension(
     libraries=INSTALL_REQUIRES
 )
 {% else %}
-PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests"])
+PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests", "tests.*"])
 {% if extra_dependencies or dependencies: %}
 EXTRAS_REQUIRE = {
   {% for dependency in extra_dependencies: %}
