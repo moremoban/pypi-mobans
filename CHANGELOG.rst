@@ -10,6 +10,8 @@ Change log
 #. Add mit license text
 #. `#126 <https://github.com/moremoban/pypi-mobans/issues/126>`_: support github
    auto pypi publishing action
+#. `#133 <https://github.com/moremoban/pypi-mobans/issues/133>`_: provide CI
+   azure build yaml files
 
 **Updated**
 
