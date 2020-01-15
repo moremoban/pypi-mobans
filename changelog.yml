@@ -4,6 +4,12 @@ releases:
   - changes:
       - action: Added
         details:
+          - "add github star badges"
+    date: tbd
+    version: 0.0.10
+  - changes:
+      - action: Added
+        details:
           - "pypi download stats are displayed in README"
           - Add mit license text
           - "`#126`: support github auto pypi publishing action"
