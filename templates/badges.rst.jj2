@@ -20,9 +20,10 @@
 {% else %}
 {% set suffix = '/coverage.png' %}
 {% endif %}
+{% if not no_code_coverage %}
 .. image:: https://codecov.io/{{base_path}}{{suffix}}
    :target: https://codecov.io/{{base_path}}
-
+{% endif %}
 {% if release != "0.0.0" %}
 .. image:: https://badge.fury.io/py/{{name}}.svg
    :target: https://pypi.org/project/{{name}}

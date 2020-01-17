@@ -4,6 +4,11 @@ releases:
   - changes:
       - action: Added
         details:
+          - "add python_requires in setup.py"
+          - "no code coverage support"
+  - changes:
+      - action: Added
+        details:
           - "add github star badges"
     date: tbd
     version: 0.0.10

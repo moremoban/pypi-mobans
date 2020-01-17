@@ -7,7 +7,6 @@ pypi-mobans
 
 .. image:: https://codecov.io/github/moremoban/pypi-mobans/coverage.png
    :target: https://codecov.io/github/moremoban/pypi-mobans
-
 .. image:: https://img.shields.io/github/stars/moremoban/pypi-mobans.svg?style=social&maxAge=3600&label=Star
     :target: https://github.com/moremoban/pypi-mobans/stargazers
 
