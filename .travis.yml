@@ -38,7 +38,7 @@ stages:
   <<: *disable_global
   python: 3.6
   stage: moban
-  install: pip install moban>=0.0.4
+  install: pip install moban>=0.0.4 gitfs2 pypifs
   script: make upstreaming git-diff-check
 
 jobs:
