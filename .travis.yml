@@ -5,7 +5,33 @@ notifications:
   email: false
 python:
   - 3.7
-  - 2.7
+  - 3.6
+
+stages:
+  - lint
+  - moban
+  - test
+
+
+.lint: &lint
+  git:
+    submodules: false
+  python: 3.6
+  stage: lint
+  script: make install_test lint
+
+.moban: &moban
+  python: 3.6
+  stage: moban
+  install: pip install moban>=0.0.4 gitfs2 pypifs
+  script: make upstreaming git-diff-check
+
+jobs:
+  include:
+    - *moban
+    - *lint
+
+stage: test
 
 before_install:
   - if [[ -f min_requirements.txt && "$MINREQ" -eq 1 ]]; then
@@ -24,13 +50,3 @@ script:
   - pytest
 after_success:
   codecov
-
-
-jobs:
-  include:
-    - stage: lint
-      before_install: false
-      script: make install_test lint
-    - stage: moban
-      install: pip install moban>=0.0.4 gitfs2 pypifs
-      script: make upstreaming git-diff-check
