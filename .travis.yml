@@ -5,7 +5,48 @@ notifications:
   email: false
 python:
   - 3.7
-  - 3.6
+  - 2.7
+
+stages:
+  - lint
+  - moban
+  - test
+
+.disable_global: &disable_global
+  addons: false
+  cache: false
+  env: {}
+  python: false
+  before_install: false
+  install: false
+  before_script: false
+  script: false
+  after_success: false
+  after_failure: false
+  before_deploy: false
+  deploy: false
+
+.lint: &lint
+  <<: *disable_global
+  git:
+    submodules: false
+  python: 3.6
+  stage: lint
+  script: make install_test lint
+
+.moban: &moban
+  <<: *disable_global
+  python: 3.6
+  stage: moban
+  install: pip install moban>=0.0.4 gitfs2 pypifs
+  script: make upstreaming git-diff-check
+
+jobs:
+  include:
+    - *moban
+    - *lint
+
+stage: test
 
 before_install:
   - if [[ -f min_requirements.txt && "$MINREQ" -eq 1 ]]; then
@@ -24,12 +65,3 @@ script:
   - pytest
 after_success:
   codecov
-
-
-jobs:
-  include:
-    - stage: lint
-      script: make install_test lint
-    - stage: moban
-      install: pip install moban>=0.0.4 gitfs2 pypifs
-      script: make upstreaming git-diff-check
