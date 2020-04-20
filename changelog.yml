@@ -6,11 +6,11 @@ releases:
         details:
           - "add python_requires in setup.py"
           - "no code coverage support"
-  - changes:
-      - action: Added
-        details:
           - "add github star badges"
-    date: tbd
+      - action: Fixed
+        details:
+          - "fixed travis config"
+    date: 20.04.2020
     version: 0.0.10
   - changes:
       - action: Added
