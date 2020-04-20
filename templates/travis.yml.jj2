@@ -41,23 +41,9 @@ stages:
   - test
 
 {% endblock %}
-.disable_global: &disable_global
-  addons: false
-  cache: false
-  env: {}
-  python: false
-  before_install: false
-  install: false
-  before_script: false
-  script: false
-  after_success: false
-  after_failure: false
-  before_deploy: false
-  deploy: false
 
 {% if lint_command != False %}
 .lint: &lint
-  <<: *disable_global
   git:
     submodules: false
   python: 3.6
@@ -70,10 +56,9 @@ stages:
 {% endif %}
 {% if moban_command != False %}
 .moban: &moban
-  <<: *disable_global
   python: 3.6
   stage: moban
-  install: pip install moban>=0.0.4
+  install: pip install moban>=0.0.4 gitfs2 pypifs
 {% if moban_command.startswith('moban') and 'exit-code' not in moban_command %}
   script:
     - {{ moban_command }}

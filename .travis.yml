@@ -5,29 +5,15 @@ notifications:
   email: false
 python:
   - 3.7
-  - 2.7
+  - 3.6
 
 stages:
   - lint
   - moban
   - test
 
-.disable_global: &disable_global
-  addons: false
-  cache: false
-  env: {}
-  python: false
-  before_install: false
-  install: false
-  before_script: false
-  script: false
-  after_success: false
-  after_failure: false
-  before_deploy: false
-  deploy: false
 
 .lint: &lint
-  <<: *disable_global
   git:
     submodules: false
   python: 3.6
@@ -35,10 +21,9 @@ stages:
   script: make install_test lint
 
 .moban: &moban
-  <<: *disable_global
   python: 3.6
   stage: moban
-  install: pip install moban>=0.0.4
+  install: pip install moban>=0.0.4 gitfs2 pypifs
   script: make upstreaming git-diff-check
 
 jobs:

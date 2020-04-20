@@ -20,18 +20,23 @@
 {% else %}
 {% set suffix = '/coverage.png' %}
 {% endif %}
+{% if not no_code_coverage %}
 .. image:: https://codecov.io/{{base_path}}{{suffix}}
    :target: https://codecov.io/{{base_path}}
-
+{% endif %}
 {% if release != "0.0.0" %}
 .. image:: https://badge.fury.io/py/{{name}}.svg
    :target: https://pypi.org/project/{{name}}
 
 .. image:: https://pepy.tech/badge/{{name}}/month
    :target: https://pepy.tech/project/{{name}}/month
-{% endif %}
 
+{% endif %}
 {% if gitter_room %}
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
    :target: https://gitter.im/{{gitter_room}}
+{% endif %}
+{% if scm_host == 'github.com' %}
+.. image:: https://img.shields.io/github/stars/{{organisation}}/{{name}}.svg?style=social&maxAge=3600&label=Star
+    :target: https://github.com/{{organisation}}/{{name}}/stargazers
 {% endif %}
