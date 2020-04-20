@@ -12,6 +12,7 @@ def test_setup():
     yaml = YAML(typ="safe")
     context = yaml.load(content)
     rendered = get_rendered_file(filename, context)
+    print(rendered)
     expected = get_file_content("setup.py.output")
     assert expected == rendered
 
@@ -36,6 +37,5 @@ def test_setup_use_markers_false():
     yaml = YAML(typ="safe")
     context = yaml.load(content)
     rendered = get_rendered_file(filename, context)
-    print(rendered)
     expected = get_file_content("setup_use_markers_false.py.output")
     assert expected == rendered
