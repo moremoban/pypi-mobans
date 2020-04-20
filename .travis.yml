@@ -5,12 +5,13 @@ notifications:
   email: false
 python:
   - 3.7
-  - 2.7
+  - 3.6
 
 stages:
   - lint
   - moban
   - test
+
 
 .lint: &lint
   git:
