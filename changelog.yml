@@ -2,6 +2,13 @@ name: pypi-mobans
 organisation: moremoban
 releases:
   - changes:
+      - action: Updated
+        details:
+          - "Configure lint and moban stage use to MINREQ=0"
+          - "Updated gitignore to latest as of the release date"
+    date: 03.05.2020
+    version: 0.0.11
+  - changes:
       - action: Added
         details:
           - "add python_requires in setup.py"

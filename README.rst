@@ -60,9 +60,8 @@ will be merged into master branch.
 
 In order to make moban updates: please call `make`.
 
-Notes
+User guides
 ================================================================================
-
 
 Release and publish from command line
 --------------------------------------------------------------------------------
@@ -92,3 +91,30 @@ two secrets::
     PYPI_PASSWORD
 
 Once you have done that, a github release will trigger an auto publishing.
+
+
+Restrict your package to a python version
+--------------------------------------------------------------------------------
+
+The following strings are required in your project yaml file::
+
+   python_requires: ">=3.6"
+   min_python_version: "3.6"
+
+
+Using dependency markers in `setup.py`
+--------------------------------------------------------------------------------
+
+In order to use dependency markers in `setup.py`, add `setup_use_markers: true`
+in your `mobanfile.
+
+
+Developer Guides
+================================================================================
+
+In order to update this README, please find the .moban.d/local-README.rst.jj2,
+and place your changes there.
+
+Then call::
+
+    $ make upstreaming

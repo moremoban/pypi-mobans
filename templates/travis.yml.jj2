@@ -47,6 +47,8 @@ stages:
   git:
     submodules: false
   python: 3.6
+  env:
+    - MINREQ=0
   stage: lint
 {% if lint_command == 'flake8' %}
   install: pip install flake8
@@ -57,6 +59,8 @@ stages:
 {% if moban_command != False %}
 .moban: &moban
   python: 3.6
+  env:
+    - MINREQ=0
   stage: moban
   install: pip install moban>=0.0.4 gitfs2 pypifs
 {% if moban_command.startswith('moban') and 'exit-code' not in moban_command %}
