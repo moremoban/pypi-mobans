@@ -43,9 +43,8 @@ will be merged into master branch.
 
 In order to make moban updates: please call `make`.
 
-Notes
+User guides
 ================================================================================
-
 
 Release and publish from command line
 --------------------------------------------------------------------------------
@@ -91,6 +90,17 @@ Using dependency markers in `setup.py`
 
 In order to use dependency markers in `setup.py`, add `setup_use_markers: true`
 in your `mobanfile.
+
+
+Developer Guides
+================================================================================
+
+In order to update this README, please find the .moban.d/local-README.rst.jj2,
+and place your changes there.
+
+Then call::
+
+    $ make upstreaming
 
 {% endblock %}
 
