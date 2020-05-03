@@ -93,6 +93,16 @@ two secrets::
 
 Once you have done that, a github release will trigger an auto publishing.
 
+
+Restrict your package to a python version
+--------------------------------------------------------------------------------
+
+The following strings are required in your project yaml file::
+
+   python_requires: ">=3.6"
+   min_python_version: "3.6"
+
+
 Using dependency markers in `setup.py`
 --------------------------------------------------------------------------------
 
