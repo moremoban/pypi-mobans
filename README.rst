@@ -92,3 +92,9 @@ two secrets::
     PYPI_PASSWORD
 
 Once you have done that, a github release will trigger an auto publishing.
+
+Using dependency markers in `setup.py`
+--------------------------------------------------------------------------------
+
+In order to use dependency markers in `setup.py`, add `setup_use_markers: true`
+in your `mobanfile.
