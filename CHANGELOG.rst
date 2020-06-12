@@ -1,6 +1,14 @@
 Change log
 ================================================================================
 
+0.0.12 - tbd
+--------------------------------------------------------------------------------
+
+**added**
+
+#. `#143 <https://github.com/moremoban/pypi-mobans/issues/143>`_: include python
+   setup.py checkdocs
+
 0.0.11 - 03.05.2020
 --------------------------------------------------------------------------------
 
@@ -17,6 +25,8 @@ Change log
 #. add python_requires in setup.py
 #. no code coverage support
 #. add github star badges
+#. `#145 <https://github.com/moremoban/pypi-mobans/issues/145>`_: specify test
+   dependencies with project.yml file
 
 **Fixed**
 
