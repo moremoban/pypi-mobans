@@ -3,6 +3,10 @@ mock;python_version<"3"
 codecov
 coverage
 flake8
+black
+isort
+collective.checkdocs
+moban
 {% for dependency in test_dependencies: %}
 {{dependency}}
 {% endfor %}
