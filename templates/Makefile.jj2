@@ -13,7 +13,7 @@ lint:
 	bash lint.sh
 
 format:
-    bash format.sh
+	bash format.sh
 
 git-diff-check:
 	git diff --exit-code
