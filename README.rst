@@ -171,6 +171,13 @@ In order to use dependency markers in `setup.py`, add `setup_use_markers: true`
 in your `mobanfile.
 
 
+Auto generate contributors
+--------------------------------------------------------------------------------
+
+Github has a record all contributors, hence it is possible to generate
+contributors list from github call.
+
+
 Developer Guides
 ================================================================================
 
