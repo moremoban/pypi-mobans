@@ -1,4 +1,4 @@
-{% set contributors = moban_jinja2_contributors(name, organisation, author) %}
+{% set contributors = moban_jinja2_contributors(organisation, name, author) %}
 
 {{ contributors|length }} contributors
 ================================================================================
