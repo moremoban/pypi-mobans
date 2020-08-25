@@ -4,11 +4,11 @@ releases:
   - changes:
       - action: added
         details:
-          - "`#143`: include python setup.py checkdocs"
+          - "`#146`: include python setup.py checkdocs"
           - auto-generation of contributors
           - github action for moban update and commits
-          - better isort action
-          - added checkdocs action before generating a distribution package
+          - "`#147`: better isort action"
+          - "`#148`: generate Makeifile and format.sh"
     date: 26.08.20220
     version: 0.0.12
   - changes:

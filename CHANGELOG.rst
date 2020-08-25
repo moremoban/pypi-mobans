@@ -6,12 +6,14 @@ Change log
 
 **added**
 
-#. `#143 <https://github.com/moremoban/pypi-mobans/issues/143>`_: include python
+#. `#146 <https://github.com/moremoban/pypi-mobans/issues/146>`_: include python
    setup.py checkdocs
 #. auto-generation of contributors
 #. github action for moban update and commits
-#. better isort action
-#. added checkdocs action before generating a distribution package
+#. `#147 <https://github.com/moremoban/pypi-mobans/issues/147>`_: better isort
+   action
+#. `#148 <https://github.com/moremoban/pypi-mobans/issues/148>`_: generate
+   Makeifile and format.sh
 
 0.0.11 - 03.05.2020
 --------------------------------------------------------------------------------
