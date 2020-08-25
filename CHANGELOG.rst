@@ -1,13 +1,17 @@
 Change log
 ================================================================================
 
-0.0.12 - tbd
+0.0.12 - 26.08.20220
 --------------------------------------------------------------------------------
 
 **added**
 
 #. `#143 <https://github.com/moremoban/pypi-mobans/issues/143>`_: include python
    setup.py checkdocs
+#. auto-generation of contributors
+#. github action for moban update and commits
+#. better isort action
+#. added checkdocs action before generating a distribution package
 
 0.0.11 - 03.05.2020
 --------------------------------------------------------------------------------

@@ -5,7 +5,11 @@ releases:
       - action: added
         details:
           - "`#143`: include python setup.py checkdocs"
-    date: tbd
+          - auto-generation of contributors
+          - github action for moban update and commits
+          - better isort action
+          - added checkdocs action before generating a distribution package
+    date: 26.08.20220
     version: 0.0.12
   - changes:
       - action: Updated

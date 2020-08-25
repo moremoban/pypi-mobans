@@ -23,10 +23,10 @@ update accurately using `moban`_. Here is a list of features:
 #. core python package
 #. test configuration setup
 #. ready to commit github repository
-#. automated upload to pypi through twine
+#. automated upload to pypi via github actions
 #. version management through jinja2
-#. automated github release through gease
-
+#. automatic extraction of github contributors
+#. semi-automatic change log generation
 
 It is used with `yehua <https://github.com/chfw/yehua>`_.
 Organisations using it:
@@ -125,22 +125,6 @@ In order to make moban updates: please call `make`.
 User guides
 ================================================================================
 
-Release and publish from command line
---------------------------------------------------------------------------------
-
-In order to run, `python setup.py publish`, you will have setup `.pypirc` in
-your home folder as::
-
-   [distutils]
-   index-servers =
-     pypi
-
-   [pypi]
-   username=your_name
-   password=your_password
-
-
-And you need to configure `gease`.
 
 Auto publishing via github action
 --------------------------------------------------------------------------------
@@ -170,13 +154,11 @@ Using dependency markers in `setup.py`
 In order to use dependency markers in `setup.py`, add `setup_use_markers: true`
 in your `mobanfile.
 
-
-Auto generate contributors
+Auto generation of contributors
 --------------------------------------------------------------------------------
 
-Github has a record all contributors, hence it is possible to generate
-contributors list from github call.
-
+You must specify an author in your configuration file, otherwise contributors
+will include author.
 
 Developer Guides
 ================================================================================
