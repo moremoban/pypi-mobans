@@ -1,0 +1,10 @@
+{% set contributors = moban_jinja2_contributors(organisation, name, author) %}
+
+{{ contributors|length }} contributors
+================================================================================
+
+In alphabetical order:
+
+{% for contributor in contributors|sort(attribute='name') %}
+* `{{ contributor.name }} <{{ contributor.url }}>`_
+{% endfor %}

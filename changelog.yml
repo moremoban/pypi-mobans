@@ -2,6 +2,16 @@ name: pypi-mobans
 organisation: moremoban
 releases:
   - changes:
+      - action: added
+        details:
+          - "`#146`: include python setup.py checkdocs"
+          - auto-generation of contributors
+          - github action for moban update and commits
+          - "`#147`: better isort action"
+          - "`#148`: generate Makeifile and format.sh"
+    date: 26.08.20220
+    version: 0.0.12
+  - changes:
       - action: Updated
         details:
           - "Configure lint and moban stage use to MINREQ=0"
@@ -14,6 +24,7 @@ releases:
           - "add python_requires in setup.py"
           - "no code coverage support"
           - "add github star badges"
+          - "`#145`: specify test dependencies with project.yml file"
       - action: Fixed
         details:
           - "fixed travis config"

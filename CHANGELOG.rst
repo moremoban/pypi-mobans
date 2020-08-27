@@ -1,6 +1,20 @@
 Change log
 ================================================================================
 
+0.0.12 - 26.08.20220
+--------------------------------------------------------------------------------
+
+**added**
+
+#. `#146 <https://github.com/moremoban/pypi-mobans/issues/146>`_: include python
+   setup.py checkdocs
+#. auto-generation of contributors
+#. github action for moban update and commits
+#. `#147 <https://github.com/moremoban/pypi-mobans/issues/147>`_: better isort
+   action
+#. `#148 <https://github.com/moremoban/pypi-mobans/issues/148>`_: generate
+   Makeifile and format.sh
+
 0.0.11 - 03.05.2020
 --------------------------------------------------------------------------------
 
@@ -17,6 +31,8 @@ Change log
 #. add python_requires in setup.py
 #. no code coverage support
 #. add github star badges
+#. `#145 <https://github.com/moremoban/pypi-mobans/issues/145>`_: specify test
+   dependencies with project.yml file
 
 **Fixed**
 
