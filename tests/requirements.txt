@@ -1,8 +1,9 @@
 gease
 codecov
-moban>=0.6.4
+moban>=0.8.2
 pytest~=3.6.1
 flake8
 yamllint
 moban-jinja2-github
 moban-ansible
+gitfs2
