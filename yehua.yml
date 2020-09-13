@@ -1,6 +1,6 @@
 introduction: |+
-  [info]Yehua /'jɛhwa/[/info] will walk you through creating a
-  blank python package. Press ^C to quit at any time.
+  [info]Yehua /'jɛhwa/[/info] will walk you through.
+  Press ^C to quit at any time.
 
 configuration:
   template_path: ./new-project/templates
