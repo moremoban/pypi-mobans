@@ -31,10 +31,10 @@ layout:
     - docs:
       - source
 templates:
-  - "{{project_name}}.yml": project.yml
+  - "{{project_name}}.yml": project.yml.jj2
   - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"
-  - .moban.yml: project-moban.yml
-  - changelog.yml: changelog.yml
+  - .moban.yml: project-moban.yml.jj2
+  - changelog.yml: changelog.yml.jj2
   - Makefile: Makefile
 static:
   - ".moban.d/CUSTOM_README.rst.jj2": "CUSTOM_README.rst"
