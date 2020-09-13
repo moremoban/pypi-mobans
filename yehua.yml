@@ -1,6 +1,6 @@
 introduction: |+
-  [info]Yehua /'jɛhwa/[/info] will walk you through creating a blank python package.
-  Press ^C to quit at any time.
+  [info]Yehua /'jɛhwa/[/info] will walk you through creating a
+  blank python package. Press ^C to quit at any time.
 
 configuration:
   template_path: ./new-project/templates
@@ -9,18 +9,18 @@ questions:
   - project_name: "project name [yehua-boilerplate]: "
   - description: "description [Moremoban organisation's best template]: "
   - license:
-    - question: "license: "
-      "1. mit": "N/A"
-      "2. newbsd": "N/A"
+      - question: "license: "
+        "1. mit": "N/A"
+        "2. newbsd": "N/A"
   - author: "author: "
   - contact: "contact email: "
   - organisation: "github profile/organisation: "
   - company: "copyright owner [{{author}}]: "
   - project_type:
-    - question: "project type: "
-      "1. library": "N/A"
-      "2. command line interface":
-        - cli: "cli executable name: "
+      - question: "project type: "
+        "1. library": "N/A"
+        "2. command line interface":
+          - cli: "cli executable name: "
 layout:
   - "{{project_name|lower|replace('-', '_')}}"
   - tests
@@ -39,7 +39,8 @@ templates:
 static:
   - ".moban.d/CUSTOM_README.rst.jj2": "CUSTOM_README.rst"
   - ".moban.d/custom_setup.py.jj2": custom_setup.py.jj2
-  - ".moban.d/tests/custom_requirements.txt.jj2": "tests/custom_requirements.txt.jj2"
+  - ".moban.d/tests/custom_requirements.txt.jj2": |
+    "tests/custom_requirements.txt.jj2"
   - CHANGELOG.rst: CHANGELOG.rst
   - setup.cfg: setup.cfg
 post-moban:
