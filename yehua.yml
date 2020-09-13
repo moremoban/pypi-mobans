@@ -25,11 +25,11 @@ layout:
   - "{{project_name|lower|replace('-', '_')}}"
   - tests
   - docs:
-    - source
-  - .moban.d:
-    - tests
-    - docs:
       - source
+  - .moban.d:
+      - tests
+      - docs:
+          - source
 templates:
   - "{{project_name}}.yml": project.yml.jj2
   - "{{project_name | replace('-', '_')}}/__init__.py": "__init__.py.jj2"
@@ -39,8 +39,7 @@ templates:
 static:
   - ".moban.d/CUSTOM_README.rst.jj2": "CUSTOM_README.rst"
   - ".moban.d/custom_setup.py.jj2": custom_setup.py.jj2
-  - ".moban.d/tests/custom_requirements.txt.jj2": |
-    "tests/custom_requirements.txt.jj2"
+  - ".moban.d/tests/custom_requirements.txt.jj2": "tests/requirements.txt.jj2"
   - CHANGELOG.rst: CHANGELOG.rst
   - setup.cfg: setup.cfg
 post-moban:
