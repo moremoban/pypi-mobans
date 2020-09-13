@@ -4,6 +4,12 @@ releases:
   - changes:
       - action: added
         details:
+          - "new project starter kits is relocated from yehua here"
+    date: 13.09.20220
+    version: 0.1.0
+  - changes:
+      - action: added
+        details:
           - "`#146`: include python setup.py checkdocs"
           - auto-generation of contributors
           - github action for moban update and commits
