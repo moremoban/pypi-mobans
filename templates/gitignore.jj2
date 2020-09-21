@@ -38,5 +38,8 @@
 {% include 'gitignore/Global/' + ruleset + '.gitignore' %}
 {% endfor %}
 
+# remove moban hash dictionary
+.moban.hashes
+
 {%block extra%}
 {%endblock%}
