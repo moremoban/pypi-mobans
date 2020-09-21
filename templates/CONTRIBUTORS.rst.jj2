@@ -6,5 +6,5 @@
 In alphabetical order:
 
 {% for contributor in contributors|sort(attribute='name') %}
-* `{{ contributor.name }} <{{ contributor.url }}>`_
+* `{{ contributor.name }} <{{ contributor.html_url }}>`_
 {% endfor %}
