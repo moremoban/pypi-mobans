@@ -1,2 +1,2 @@
 pip install flake8
-flake8 . --exclude=.moban.d,docs,setup.py {{flake8_options}} {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%} && python setup.py checkdocs
+flake8 --exclude=.moban.d,docs,setup.py {{flake8_options}} {%block flake8_options%} --builtins=unicode,xrange,long{%endblock%} . && python setup.py checkdocs
