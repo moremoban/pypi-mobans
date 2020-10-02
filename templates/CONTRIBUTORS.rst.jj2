@@ -1,5 +1,7 @@
 {% set contributors = moban_jinja2_contributors(organisation, name, author) %}
 
+{% if contributors %}
+
 {{ contributors|length }} contributors
 ================================================================================
 
@@ -8,3 +10,12 @@ In alphabetical order:
 {% for contributor in contributors|sort(attribute='name') %}
 * `{{ contributor.name }} <{{ contributor.html_url }}>`_
 {% endfor %}
+
+{% else %}
+
+No contributors yet
+=======================
+
+* Your github link will be listed here after your PR is merged
+
+{% endif %}
