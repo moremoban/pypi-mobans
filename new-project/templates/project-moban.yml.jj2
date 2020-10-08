@@ -1,7 +1,7 @@
 configuration:
   template_dir:
     - "pypi://pypi-mobans-pkg/resources/templates"
-    - "pypi://pypi-mobans-pkg/resources/statics"
+    - "pypi://pypi-mobans-pkg/resources/statics "
     - ".moban.d"
   configuration: {{ project_name }}.yml
 targets:
