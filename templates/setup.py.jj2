@@ -256,6 +256,7 @@ PUBLISH_COMMAND = "{0} setup.py sdist upload -r pypi".format(sys.executable)
 {% else %}
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
 {% endif %}
+HERE = os.path.abspath(os.path.dirname(__file__))
 
 {% if not external_module_library %}
 GS_COMMAND = ("gs {{name}} v{{release}} " +
@@ -264,7 +265,6 @@ NO_GS_MESSAGE = ("Automatic github release is disabled. " +
                  "Please install gease to enable it.")
 UPLOAD_FAILED_MSG = (
     'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND)
-HERE = os.path.abspath(os.path.dirname(__file__))
 
 
 class PublishCommand(Command):
