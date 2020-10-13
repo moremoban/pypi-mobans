@@ -257,7 +257,7 @@ PUBLISH_COMMAND = "{0} setup.py sdist upload -r pypi".format(sys.executable)
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
 {% endif %}
 
-{% if external_module_library %}
+{% if not external_module_library %}
 GS_COMMAND = ("gs {{name}} v{{release}} " +
               "Find {{release}} in changelog for more details")
 NO_GS_MESSAGE = ("Automatic github release is disabled. " +
@@ -446,7 +446,7 @@ if __name__ == "__main__":
 {% endif %}
 {% endif%}
         classifiers=CLASSIFIERS,
-{% if external_module_library %}
+{% if not external_module_library %}
         cmdclass=SETUP_COMMANDS
 {% endif %}
     )
