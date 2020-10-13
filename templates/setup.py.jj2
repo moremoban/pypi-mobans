@@ -37,7 +37,7 @@ import platform
 from shutil import rmtree
 
 {% if external_module_library %}
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 {% else %}
 from setuptools import Command, setup, find_packages
 {%endif%}
