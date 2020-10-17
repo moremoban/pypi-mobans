@@ -157,8 +157,7 @@ in your `mobanfile.
 Auto generation of contributors
 --------------------------------------------------------------------------------
 
-You must specify an author in your configuration file, otherwise contributors
-will include author.
+You can specify `excluded_github_users` to exclude yourself and bot accounts.
 
 Developer Guides
 ================================================================================

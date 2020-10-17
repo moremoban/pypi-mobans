@@ -1,4 +1,4 @@
-{% set contributors = moban_jinja2_contributors(organisation, name, author) %}
+{% set contributors = moban_jinja2_contributors(organisation, name, excluded_github_users) %}
 
 {% if contributors %}
 
