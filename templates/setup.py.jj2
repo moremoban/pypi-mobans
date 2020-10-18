@@ -259,7 +259,7 @@ PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.exe
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 {% if not external_module_library %}
-GS_COMMAND = ("gs {{name}} v{{release}} " +
+GS_COMMAND = ("gease {{name}} v{{release}} " +
               "Find {{release}} in changelog for more details")
 NO_GS_MESSAGE = ("Automatic github release is disabled. " +
                  "Please install gease to enable it.")
