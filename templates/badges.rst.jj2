@@ -29,7 +29,7 @@
    :target: https://pypi.org/project/{{name}}
 
 .. image:: https://pepy.tech/badge/{{name}}/month
-   :target: https://pepy.tech/project/{{name}}/month
+   :target: https://pepy.tech/project/{{name}}
 
 {% endif %}
 {% if gitter_room %}
