@@ -5,14 +5,6 @@
 {% set branch = False %}
 {% endif %}
 {% set slug = organisation + '/' + name %}
-{% if scm_host == 'github.com' %}
-{% if branch %}
-.. image:: https://api.travis-ci.org/{{slug}}.svg?branch={{branch}}
-{% else %}
-.. image:: https://api.travis-ci.org/{{slug}}.svg
-{% endif %}
-   :target: http://travis-ci.org/{{slug}}
-{% endif %}
 
 {% set base_path = scm_host.split('.')[0] + '/' + slug %}
 {% if branch %}
