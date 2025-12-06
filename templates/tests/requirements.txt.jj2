@@ -1,6 +1,6 @@
-{{% if not use_pytest %}}
+{% if not use_pytest %}
 nose
-{{% endif %}
+{% endif %}
 codecov
 coverage
 flake8
