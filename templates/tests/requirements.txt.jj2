@@ -1,5 +1,6 @@
+{{% if not use_pytest %}}
 nose
-mock;python_version<"3"
+{{% endif %}
 codecov
 coverage
 flake8
